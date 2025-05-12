@@ -1,6 +1,6 @@
 # My Awesome Project
 
-This project is a simple app that helps you compile and display code. p.s. lottie smellss
+This project is a simple app that helps you compile and display code. p.s. lottie smells
 
 ## Installation
 
