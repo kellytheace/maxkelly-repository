@@ -14,6 +14,11 @@
       margin-top: 20px;
     }
   </style>
+  <!-- MathJax script to enable LaTeX rendering -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 <body>
 
@@ -51,6 +56,26 @@
         document.getElementById("result").innerText = `DCF Value: $${dcf.toFixed(2)}`;
       }
     </script>
+
+    <hr>
+
+    <h2>📘 How the DCF Formula Works</h2>
+    <p>
+      The formula for Discounted Cash Flow is:
+    </p>
+
+    <p>
+      \[
+      \text{DCF} = \sum_{t=1}^{n} \frac{CF_t}{(1 + r)^t}
+      \]
+    </p>
+
+    <p>
+      Where:<br>
+      - \( CF_t \): Cash flow at time \( t \)<br>
+      - \( r \): Discount rate<br>
+      - \( n \): Total number of periods
+    </p>
 
     <a href="../index.html">← Back to Home</a>
   </main>
