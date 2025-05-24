@@ -6,8 +6,10 @@ This repository contains a simple website built with JavaScript, HTML, and CSS t
 
 - Project Euler solutions
 - Finance, Risk & Insurance models
+- Applied Probability & Statistics
+- Stochastic processes
 
-## Files
+## Key-files
 
 - `dcf_model.py` – Core Python script
 - `data/` – Input Excel files (optional)
