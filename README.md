@@ -1,4 +1,4 @@
-# DCF Valuation Tool
+# Max Kelly Portfolio
 
 This repository contains a simple website built with JavaScript, HTML, and CSS to showcase my portfolio of tools and models, with a focus on mathematical/computational problem solving and financial applications.
 
