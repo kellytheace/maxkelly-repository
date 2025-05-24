@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+.solution {
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #f4f4f4;
+  border-left: 4px solid #333;
+}
+pre {
+  background: #eee;
+  padding: 10px;
+  overflow-x: auto;
+}
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
