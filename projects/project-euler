@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Project Euler Solutions</title>
+  <link rel="stylesheet" href="euler-style.css">
+</head>
+<body>
+  <header>
+    <h1>Project Euler Solutions</h1>
+    <p>All solutions rendered in-browser using JavaScript</p>
+  </header>
+
+  <input type="text" id="search" placeholder="Search by problem title or number..." oninput="renderSolutions()">
+
+  <div id="solutions"></div>
+
+  <script src="euler-data.js"></script>
+  <script>
+    function renderSolutions() {
+      const container = document.getElementById("solutions");
+      const query = document.getElementById("search").value.toLowerCase();
+      container.innerHTML = "";
+
+      eulerSolutions
+        .filter(e => e.title.toLowerCase().includes(query) || e.number.toString().includes(query))
+        .forEach(e => {
+          const block = document.createElement("div");
+          block.className = "solution";
+          block.innerHTML = `
+            <h2>Problem ${e.number}: ${e.title}</h2>
+            <p><strong>Description:</strong> ${e.description}</p>
+            <pre><code>${e.solution}</code></pre>
+          `;
+          container.appendChild(block);
+        });
+    }
+
+    renderSolutions(); // Initial load
+  </script>
+</body>
+</html>
