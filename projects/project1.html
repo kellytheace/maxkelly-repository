@@ -2,36 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Project 1: DCF Valuation Tool</title>
+  <title>Project 1: Interactive DCF Calculator</title>
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    input {
+      margin: 5px;
+      padding: 5px;
+    }
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <h1>Project 1: Discounted Cash Flow (DCF) Model</h1>
-    <p>A Python-based tool for estimating intrinsic value using projected cash flows.</p>
+    <h1>Project 1: Interactive DCF Calculator</h1>
+    <p>A browser-based financial model to estimate company value using discounted cash flows.</p>
   </header>
 
   <main>
-    <h2>Project Overview</h2>
-    <p>This tool calculates the present value of forecasted cash flows using a discount rate, built entirely in Python with Pandas and NumPy.</p>
+    <h2>Enter Cash Flows and Discount Rate</h2>
 
-    <h2>Sample Code</h2>
-    <pre><code>
-import numpy as np
+    <label>Year 1 Cash Flow: $<input type="number" id="cf1" value="100"></label><br>
+    <label>Year 2 Cash Flow: $<input type="number" id="cf2" value="110"></label><br>
+    <label>Year 3 Cash Flow: $<input type="number" id="cf3" value="120"></label><br>
+    <label>Discount Rate (%): <input type="number" id="rate" value="8"></label><br>
 
-cash_flows = [100, 110, 120]
-rate = 0.08
-dcf = sum(cf / (1 + rate) ** i for i, cf in enumerate(cash_flows, 1))
-print(f"DCF Value: ${dcf:.2f}")
-    </code></pre>
+    <button onclick="calculateDCF()">Calculate DCF Value</button>
 
-    <h2>Technologies Used</h2>
-    <ul>
-      <li>Python 3</li>
-      <li>Pandas</li>
-      <li>NumPy</li>
-    </ul>
+    <p id="result"></p>
+
+    <script>
+      function calculateDCF() {
+        const cashFlows = [
+          parseFloat(document.getElementById("cf1").value),
+          parseFloat(document.getElementById("cf2").value),
+          parseFloat(document.getElementById("cf3").value)
+        ];
+        const rate = parseFloat(document.getElementById("rate").value) / 100;
+
+        let dcf = 0;
+        for (let i = 0; i < cashFlows.length; i++) {
+          dcf += cashFlows[i] / Math.pow(1 + rate, i + 1);
+        }
+
+        document.getElementById("result").innerText = `DCF Value: $${dcf.toFixed(2)}`;
+      }
+    </script>
 
     <a href="../index.html">← Back to Home</a>
   </main>
