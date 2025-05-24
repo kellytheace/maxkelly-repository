@@ -4,8 +4,8 @@ This repository contains a simple website built with JavaScript, HTML, and CSS t
 
 ## Features
 
-- Project Euler solutions
-- Finance, Risk & Insurance models
+- Project Euler Problems & Solutions
+- Finance, Risk & Insurance Models
 - Applied Probability & Statistics
 - Stochastic processes
 
