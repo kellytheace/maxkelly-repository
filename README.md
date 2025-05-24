@@ -1,20 +1,19 @@
 # DCF Valuation Tool
 
-This project is a simple Python-based Discounted Cash Flow (DCF) model used to estimate the intrinsic value of a company.
+This repository is a simple Javascript, HTML & CSS based website to display my coding skills.
 
-## 🔧 Features
+## Features
 
-- Forecasts future cash flows
-- Applies discount rates
-- Returns present value estimates
+- Project Euler solutions
+- Finance, Risk & Insurance models
 
-## 📁 Files
+## Files
 
 - `dcf_model.py` – Core Python script
 - `data/` – Input Excel files (optional)
 - `output/` – Valuation results
 
-## 💻 How to Use
+## How to Use
 
 1. Clone this repo:
    ```bash
