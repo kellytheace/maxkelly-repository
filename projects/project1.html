@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project 1: DCF Valuation Tool</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Project 1: Discounted Cash Flow (DCF) Model</h1>
+    <p>A Python-based tool for estimating intrinsic value using projected cash flows.</p>
+  </header>
+
+  <main>
+    <h2>Project Overview</h2>
+    <p>This tool calculates the present value of forecasted cash flows using a discount rate, built entirely in Python with Pandas and NumPy.</p>
+
+    <h2>Sample Code</h2>
+    <pre><code>
+import numpy as np
+
+cash_flows = [100, 110, 120]
+rate = 0.08
+dcf = sum(cf / (1 + rate) ** i for i, cf in enumerate(cash_flows, 1))
+print(f"DCF Value: ${dcf:.2f}")
+    </code></pre>
+
+    <h2>Technologies Used</h2>
+    <ul>
+      <li>Python 3</li>
+      <li>Pandas</li>
+      <li>NumPy</li>
+    </ul>
+
+    <a href="../index.html">← Back to Home</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name</p>
+  </footer>
+
+</body>
+</html>
