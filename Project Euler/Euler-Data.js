@@ -16,7 +16,7 @@ class EulerProblem {
     `;
   }
 
-  // You could also add a method to run the solution, if safe
+  // Method to run the solution (for debugging purposes)
   log() {
     console.log(this.display());
   }
