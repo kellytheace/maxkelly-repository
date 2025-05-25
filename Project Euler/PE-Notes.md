@@ -88,13 +88,13 @@ class EulerProblem {
 
 Defines a new class called EulerProblem. Think of a class as a template for creating structured objects (each representing one problem).
 
-```
+```javascript
 constructor(number, title, description, solutionCode) {
 ```
 
 This is the constructor function. It's automatically called whenever you create a new EulerProblem object. The four inputs are used to set the object’s data.
 
-```
+```javascript
 this.number = number;
     this.title = title;
     this.description = description;
@@ -103,13 +103,13 @@ this.number = number;
 
 Each of these lines saves the inputs into the object’s properties (so each object remembers its own number, title, etc.).
 
-```
+```javascript
  display() {
 ```
 
 Defines a method called display() that you can call on an EulerProblem object.
 
-```
+```javascript
 return `
       Problem ${this.number}: ${this.title}
       ${this.description}
@@ -121,7 +121,7 @@ return `
 
 This returns a formatted multi-line string with all the details of the problem. ${...} is how you insert variables inside a template string (called template literals).
 
-```
+```javascript
 log() {
     console.log(this.display());
   }
@@ -129,13 +129,13 @@ log() {
 
 This method just logs the formatted output to the console by calling the display() method.
 
-```
+```javascript
 const eulerSolutions = [
 ```
 
 Creates an array called eulerSolutions to hold all your problem objects.
 
-```
+```javascript
 new EulerProblem(
     1,
     "Multiples of 3 and 5",
