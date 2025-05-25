@@ -30,4 +30,6 @@ Finally, the eulerSolutions array stores multiple problem instances, which makes
 ```javascript
 class EulerProblem {
 
-testing 
+testing
+```
+new
