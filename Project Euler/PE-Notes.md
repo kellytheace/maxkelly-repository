@@ -11,7 +11,16 @@ When the page loads, a JavaScript function reads this data and populates the pag
 This dynamic filtering and rendering is done entirely in the browser using native JavaScript methods like `.filter()` and `.forEach()`. No page reloads are necessary, and all interaction happens instantly on the client side. This makes the site fast, simple, and easy to host on GitHub Pages, since there’s no need for a server or database to serve the content.
 
 ## HTML Line by Line explanation
-lorem ipsum dolor sit amet
+
+testing
+
+### Full code
+
+test1
+
+### Line-by-line explanation
+
+test2
 
 ## JS Line by Line explanation
 
