@@ -1,7 +1,7 @@
 # Project Euler
 
 ## Introduction
-Project Euler is a collection of challenging mathematical and computational problems designed to encourage creative problem solving with programming. The problems involve number theory, combinatorics, or algorithms.
+Project Euler is a collection of challenging mathematical and computational problems designed to encourage creative problem solving with programming. The problems often involve number theory, combinatorics, and algorithms.
 
 ## Site Architecture
 All of the Project Euler problems and their solutions are stored in a separate JavaScript file (`Euler-Data.js`) as a structured array of objects. Each object includes properties like the problem `number`, `title`, `description`, and the actual code solution.
