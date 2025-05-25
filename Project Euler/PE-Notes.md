@@ -14,4 +14,4 @@ This dynamic filtering and rendering is done entirely in the browser using nativ
 lorem ipsum dolor sit amet
 
 ## JS Line by Line explanation
-lorem ipsum dolor sit amet
+
