@@ -27,7 +27,7 @@ Finally, the `eulerSolutions` array stores multiple problem instances, which mak
 
 ### Full code
 
-```
+```javascript
 class EulerProblem {
   constructor(number, title, description, solutionCode) {
     this.number = number;
@@ -86,7 +86,7 @@ console.log(sum);`
 class EulerProblem {
 ```
 
-Defines a new class called EulerProblem. Think of a class as a template for creating structured objects (each representing one problem).
+Defines a new class called EulerProblem. A class is a template for creating structured objects (each representing one problem).
 
 ```javascript
 constructor(number, title, description, solutionCode) {
@@ -110,6 +110,7 @@ Each of these lines saves the inputs into the object’s properties (so each obj
 Defines a method called display() that you can call on an EulerProblem object.
 
 ```javascript
+display() {
 return `
       Problem ${this.number}: ${this.title}
       ${this.description}
@@ -127,13 +128,13 @@ log() {
   }
 ```
 
-This method just logs the formatted output to the console by calling the display() method.
+This method logs the formatted output to the console by calling the display() method.
 
 ```javascript
 const eulerSolutions = [
 ```
 
-Creates an array called eulerSolutions to hold all your problem objects.
+Creates an array called eulerSolutions to hold all the problem objects.
 
 ```javascript
 new EulerProblem(
