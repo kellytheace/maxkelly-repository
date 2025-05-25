@@ -53,3 +53,52 @@ Each of these lines saves the inputs into the object’s properties (so each obj
 ```
 
 Defines a method called display() that you can call on an EulerProblem object.
+
+```
+return `
+      Problem ${this.number}: ${this.title}
+      ${this.description}
+      
+      Code:
+      ${this.solutionCode}
+    `;
+```
+
+This returns a formatted multi-line string with all the details of the problem. ${...} is how you insert variables inside a template string (called template literals).
+
+```
+log() {
+    console.log(this.display());
+  }
+```
+
+This method just logs the formatted output to the console by calling the display() method.
+
+```
+const eulerSolutions = [
+```
+
+Creates an array called eulerSolutions to hold all your problem objects.
+
+```
+new EulerProblem(
+    1,
+    "Multiples of 3 and 5",
+    "Find the sum of all the multiples of 3 or 5 below 1000.",
+    `let sum = 0;
+for (let i = 0; i < 1000; i++) {
+  if (i % 3 === 0 || i % 5 === 0) {
+    sum += i;
+  }
+}
+console.log(sum);`
+  ),
+```
+
+Creates an object for Problem 1 by calling the class constructor with all the needed data. The fourth argument is the actual JavaScript code as a string.
+
+
+
+
+
+
