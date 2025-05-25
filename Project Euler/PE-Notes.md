@@ -19,17 +19,19 @@ This JavaScript code defines a class called `EulerProblem` to represent individu
 
 Each Euler problem is represented as an instance (an object) of the EulerProblem class. The class holds the problem number, title, description, and the solution code. The class also has methods:
 
-display() to return a nicely formatted string with all the problem details.
+`display()` to return a nicely formatted string with all the problem details.
 
-log() to print that string to the browser console.
+`log()` to print that string to the browser console.
 
-Finally, the eulerSolutions array stores multiple problem instances, which makes it easy to loop through them, display them, filter them, etc.
+Finally, the `eulerSolutions` array stores multiple problem instances, which makes it easy to loop through them, display them, filter them, etc.
 
 ### Class Definition
 
 ```javascript
-class EulerProblem {
+class EulerProblem {```
 
-testing
-```
-new
+Defines a new class called EulerProblem. Think of a class as a template for creating structured objects (each representing one problem).
+
+```constructor(number, title, description, solutionCode) {```
+
+test
