@@ -28,10 +28,12 @@ Finally, the `eulerSolutions` array stores multiple problem instances, which mak
 ### Class Definition
 
 ```javascript
-class EulerProblem {```
+class EulerProblem {
+```
 
 Defines a new class called EulerProblem. Think of a class as a template for creating structured objects (each representing one problem).
 
-```constructor(number, title, description, solutionCode) {```
+```constructor(number, title, description, solutionCode) {
+```
 
 test
