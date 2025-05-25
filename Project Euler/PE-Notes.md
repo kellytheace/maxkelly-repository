@@ -55,7 +55,7 @@ class EulerProblem {
     `;
   }
 
-  // Method to run the solution (for de-bugging)
+  // Method to run the solution (for debugging purposes)
   log() {
     console.log(this.display());
   }
