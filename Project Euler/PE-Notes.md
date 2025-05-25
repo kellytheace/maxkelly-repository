@@ -30,7 +30,7 @@ Each Euler problem is represented as an instance (an object) of the EulerProblem
 
 `display()` to return a nicely formatted string with all the problem details.
 
-`log()` to print that string to the browser console.
+`log()` to print that string to the browser console (for debugging).
 
 Finally, the `eulerSolutions` array stores multiple problem instances, which makes it easy to loop through them, display them, filter them, etc.
 
@@ -55,7 +55,7 @@ class EulerProblem {
     `;
   }
 
-  // You could also add a method to run the solution, if safe
+  // Method to run the solution (for de-bugging)
   log() {
     console.log(this.display());
   }
