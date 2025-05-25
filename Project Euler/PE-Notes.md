@@ -25,7 +25,62 @@ Each Euler problem is represented as an instance (an object) of the EulerProblem
 
 Finally, the `eulerSolutions` array stores multiple problem instances, which makes it easy to loop through them, display them, filter them, etc.
 
-### Class Definition
+### Full code
+
+```
+class EulerProblem {
+  constructor(number, title, description, solutionCode) {
+    this.number = number;
+    this.title = title;
+    this.description = description;
+    this.solutionCode = solutionCode;
+  }
+
+  display() {
+    return `
+      Problem ${this.number}: ${this.title}
+      ${this.description}
+      
+      Code:
+      ${this.solutionCode}
+    `;
+  }
+
+  // You could also add a method to run the solution, if safe
+  log() {
+    console.log(this.display());
+  }
+}
+
+// Now use instances of the class
+const eulerSolutions = [
+  new EulerProblem(
+    1,
+    "Multiples of 3 and 5",
+    "Find the sum of all the multiples of 3 or 5 below 1000.",
+    `let sum = 0;
+for (let i = 0; i < 1000; i++) {
+  if (i % 3 === 0 || i % 5 === 0) {
+    sum += i;
+  }
+}
+console.log(sum);`
+  ),
+  new EulerProblem(
+    2,
+    "Even Fibonacci numbers",
+    "Sum the even-valued terms of the Fibonacci sequence below 4 million.",
+    `let a = 1, b = 2, sum = 0;
+while (b < 4000000) {
+  if (b % 2 === 0) sum += b;
+  [a, b] = [b, a + b];
+}
+console.log(sum);`
+  )
+];
+```
+
+### Line-by-line explanation
 
 ```javascript
 class EulerProblem {
@@ -96,9 +151,3 @@ console.log(sum);`
 ```
 
 Creates an object for Problem 1 by calling the class constructor with all the needed data. The fourth argument is the actual JavaScript code as a string.
-
-
-
-
-
-
