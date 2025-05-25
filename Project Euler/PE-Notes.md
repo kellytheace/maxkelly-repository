@@ -15,4 +15,19 @@ lorem ipsum dolor sit amet
 
 ## JS Line by Line explanation
 
-This JavaScript code defines a class called EulerProblem to represent individual Project Euler problems in a structured, reusable way.
+This JavaScript code defines a class called `EulerProblem` to represent individual Project Euler problems in a structured, reusable way. Instead of using plain objects, object-oriented programming (OOP) is used to organize the data and behavior.
+
+Each Euler problem is represented as an instance (an object) of the EulerProblem class. The class holds the problem number, title, description, and the solution code. The class also has methods:
+
+display() to return a nicely formatted string with all the problem details.
+
+log() to print that string to the browser console.
+
+Finally, the eulerSolutions array stores multiple problem instances, which makes it easy to loop through them, display them, filter them, etc.
+
+### Class Definition
+
+```javascript
+class EulerProblem {
+
+testing 
