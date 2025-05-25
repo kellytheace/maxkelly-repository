@@ -33,7 +33,23 @@ class EulerProblem {
 
 Defines a new class called EulerProblem. Think of a class as a template for creating structured objects (each representing one problem).
 
-```constructor(number, title, description, solutionCode) {
+```
+constructor(number, title, description, solutionCode) {
 ```
 
-test
+This is the constructor function. It's automatically called whenever you create a new EulerProblem object. The four inputs are used to set the object’s data.
+
+```
+this.number = number;
+    this.title = title;
+    this.description = description;
+    this.solutionCode = solutionCode;
+```
+
+Each of these lines saves the inputs into the object’s properties (so each object remembers its own number, title, etc.).
+
+```
+ display() {
+```
+
+Defines a method called display() that you can call on an EulerProblem object.
