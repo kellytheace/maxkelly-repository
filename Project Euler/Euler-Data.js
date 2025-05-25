@@ -22,7 +22,7 @@ class EulerProblem {
   }
 }
 
-// Now use instances of the class
+// Instances of the class
 const eulerSolutions = [
   new EulerProblem(
     1,
