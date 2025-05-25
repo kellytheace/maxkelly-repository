@@ -15,3 +15,4 @@ lorem ipsum dolor sit amet
 
 ## JS Line by Line explanation
 
+This JavaScript code defines a class called EulerProblem to represent individual Project Euler problems in a structured, reusable way.
