@@ -13,8 +13,9 @@ This repository contains a simple website built with JavaScript, HTML, and CSS t
 
 ## Key-files
 
-- `dcf_model.py` – Core Python script
-- `data/` – Input Excel files (optional)
+- `index.html` – Portfolio homepage
+- `Project-Euler.html` - Project Euler prbolems and solutions
+- `data/` – Input Excel files (historic financial data)
 - `output/` – Valuation results
 
 ## How to Use
