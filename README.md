@@ -22,5 +22,5 @@ This repository contains a simple website built with JavaScript, HTML, and CSS t
 
 1. Clone this repo:
    ```bash
-   git clone https://github.com/yourusername/dcf-model.git
-   cd dcf-model
+   git clone https://github.com/kellytheace/maxkelly-repository.git
+   cd maxkelly-repository
