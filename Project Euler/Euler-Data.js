@@ -38,11 +38,20 @@ print(result)`
     2,
     "Even Fibonacci numbers",
     "By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.",
-    `let a = 1, b = 2, sum = 0;
-while (b < 4000000) {
-  if (b % 2 === 0) sum += b;
-  [a, b] = [b, a + b];
-}
-console.log(sum);`
+    `n1=1
+n2=1
+n3=n2+n1
+arr=[1,2]
+result=0
+while n1<4000000:
+    n1=n2+n3
+    n2=n3
+    n3=n1
+    arr.append(n1)
+
+for i in arr:
+    if i%2==0:
+        result=result+i
+print('result is ', result)`
   )
 ];
