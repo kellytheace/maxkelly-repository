@@ -37,7 +37,7 @@ print(result)`
   new EulerProblem(
     2,
     "Even Fibonacci numbers",
-    "Sum the even-valued terms of the Fibonacci sequence below 4 million.",
+    "By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.",
     `let a = 1, b = 2, sum = 0;
 while (b < 4000000) {
   if (b % 2 === 0) sum += b;
