@@ -1,5 +1,5 @@
 class EulerProblem {
-  constructor(number, title, description, solutionCode) {
+  constructor(number, title, description, solutionCode, result) {
     this.number = number;
     this.title = title;
     this.description = description;
