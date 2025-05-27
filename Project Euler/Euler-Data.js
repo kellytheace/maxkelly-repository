@@ -4,6 +4,7 @@ class EulerProblem {
     this.title = title;
     this.description = description;
     this.solutionCode = solutionCode;
+    this.result = result;
   }
 
   display() {
@@ -11,8 +12,11 @@ class EulerProblem {
       Problem ${this.number}: ${this.title}
       ${this.description}
       
-      Code:
+      Solution Code:
       ${this.solutionCode}
+      
+      Result:
+      ${this.result}
     `;
   }
 
@@ -32,7 +36,8 @@ const eulerSolutions = [
 for i in range (1,1000):
     if i%3 == 0 or i%5 == 0:
         result=result+i
-print(result)`
+print(result)`,
+    "233168"
   ),
   new EulerProblem(
     2,
@@ -52,6 +57,7 @@ while n1<4000000:
 for i in arr:
     if i%2==0:
         result=result+i
-print('result is ', result)`
+print('result is ', result)`,
+    "4613732"
   )
 ];
