@@ -35,18 +35,19 @@ const eulerSolutions = [
     1,
     "Multiples of 3 and 5",
     "Find the sum of all the multiples of 3 or 5 below 1000.",
+    ["divisibility","test"],
     `result=0
 for i in range (1,1000):
     if i%3 == 0 or i%5 == 0:
         result=result+i
 print(result)`,
-    "233168",
-    ["divisibility","test"]
+    "233168"
   ),
   new EulerProblem(
     2,
     "Even Fibonacci numbers",
     "By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.",
+    ["divisibility", "fibonacci"],
     `n1=1
 n2=1
 n3=n2+n1
@@ -62,13 +63,13 @@ for i in arr:
     if i%2==0:
         result=result+i
 print('result is ', result)`,
-    "4613732",
-    ["divisibility", "fibonacci"]
+    "4613732"
   ),
   new EulerProblem(
     3,
     "Largest Prime Factor",
     "What is the largest prime factor of the number 600851475143?",
+    ["factorisation","prime-number"],
     `num=600851475143
 arr=[]
 while num>1:
@@ -78,7 +79,6 @@ while num>1:
             arr.append(i)
             break
 print(max(arr))`,
-    "6857",
-    ["factorisation","prime-number"]
+    "6857"
   )
 ];
