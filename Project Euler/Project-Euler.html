@@ -23,6 +23,19 @@
   style="width: 250px;"
 >
 
+  <label for="tagFilter"><strong>Filter by tag:</strong></label>
+<select id="tagFilter" onchange="renderSolutions()">
+  <option value="">-- All Tags --</option>
+  <option value="multiples">multiples</option>
+  <option value="math">math</option>
+  <option value="loop">loop</option>
+  <option value="fibonacci">fibonacci</option>
+  <option value="even">even</option>
+  <option value="sequence">sequence</option>
+  <option value="prime-number">prime-number</option>
+  <option value="factorisation">factorisation</option>
+</select>
+  
   <div id="solutions"></div>
 
   <script src="Euler-Data.js"></script>
@@ -30,16 +43,20 @@
     function renderSolutions() {
       const container = document.getElementById("solutions");
       const query = document.getElementById("search").value.toLowerCase();
+      const selectedTag = document.getElementById("tagFilter").value;
       container.innerHTML = "";
 
       eulerSolutions
-        .filter(e => e.title.toLowerCase().includes(query) || e.number.toString().includes(query))
+        .filter(e => e.title.toLowerCase().includes(query) || e.number.toString().includes(query)) &&
+      (selectedTag === "" || e.tags.includes(selectedTag))
+    )
         .forEach(e => {
           const block = document.createElement("div");
           block.className = "solution";
           block.innerHTML = `
             <h2>Problem ${e.number}: ${e.title}</h2>
             <p><strong>Description:</strong> ${e.description}</p>
+            <p><strong>Tags:</strong> ${e.tags.join(', ')}</p>
             <p><strong>Solution Code:</strong></p>
             <!-- <pre><code>${e.solutionCode}</code></pre> -->
             <pre><code class="language-python">${e.solutionCode}</code></pre>
