@@ -59,5 +59,20 @@ for i in arr:
         result=result+i
 print('result is ', result)`,
     "4613732"
+  ),
+  new EulerProblem(
+    1,
+    "Largest Prime Factor",
+    "What is the largest prime factor of the number 600851475143?",
+    `num=600851475143
+arr=[]
+while num>1:
+    for i in range (2,num+1):
+        if num%i==0:
+            num=num//i
+            arr.append(i)
+            break
+print(max(arr))`,
+    "6857"
   )
 ];
