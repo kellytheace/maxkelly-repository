@@ -35,7 +35,7 @@ const eulerSolutions = [
     1,
     "Multiples of 3 and 5",
     "Find the sum of all the multiples of 3 or 5 below 1000.",
-    ["divisibility","test"],
+    ["divisibility"],
     `result=0
 for i in range (1,1000):
     if i%3 == 0 or i%5 == 0:
@@ -85,7 +85,7 @@ print(max(arr))`,
     4,
     "Largest Palindrome Product",
     "Find the largest palindrome made from the product of two 3-digit numbers.",
-    ["palindrome","test"],
+    ["palindrome"],
     `def palindrome_check(n):
     return str(n) == str(n)[::-1]
 arr=[]
