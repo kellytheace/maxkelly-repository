@@ -61,7 +61,7 @@ print('result is ', result)`,
     "4613732"
   ),
   new EulerProblem(
-    1,
+    3,
     "Largest Prime Factor",
     "What is the largest prime factor of the number 600851475143?",
     `num=600851475143
