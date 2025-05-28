@@ -24,20 +24,34 @@
 >
 
   <label for="tagFilter"><strong>Filter by tag:</strong></label>
+  
 <select id="tagFilter" onchange="renderSolutions()">
   <option value="">-- All Tags --</option>
-  <option value="divisibility">divisibility</option>
-  <option value="test">test</option>
-  <option value="fibonacci">fibonacci</option>
-  <option value="factorisation">factorisation</option>
-  <option value="palindrome">palindrome</option>
-  <option value="prime-number">prime-number</option>
 </select>
   
   <div id="solutions"></div>
 
   <script src="Euler-Data.js"></script>
   <script>
+    <!-- Function to dynamically populate the tag dropdown -->
+  function populateTags() {
+    const tagSelect = document.getElementById("tagFilter");
+    const allTags = new Set();
+
+    <!-- Collect all unique tags -->
+    eulerSolutions.forEach(problem => {
+      problem.tags.forEach(tag => allTags.add(tag));
+    });
+
+    <!-- Add each tag as an <option> -->
+    Array.from(allTags).sort().forEach(tag => {
+      const option = document.createElement("option");
+      option.value = tag;
+      option.textContent = tag;
+      tagSelect.appendChild(option);
+    });
+  }
+    
     function renderSolutions() {
       const container = document.getElementById("solutions");
       const query = document.getElementById("search").value.toLowerCase();
@@ -65,7 +79,7 @@
         });
       Prism.highlightAll(); // re-highlight if you're using Prism
     }
-    
+    populateTags();
     renderSolutions(); // Initial load
   </script>
   <a href="../index.html">← Back to Home</a>
