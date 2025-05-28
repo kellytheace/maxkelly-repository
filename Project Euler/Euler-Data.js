@@ -80,5 +80,21 @@ while num>1:
             break
 print(max(arr))`,
     "6857"
+  ),
+  new EulerProblem(
+    4,
+    "Largest Palindrome Product",
+    "Find the largest palindrome made from the product of two 3-digit numbers.",
+    ["palindrome","test"],
+    `def palindrome_check(n):
+    return str(n) == str(n)[::-1]
+arr=[]
+for i in range(1,999+1):
+    for j in range(1,999+1):
+        x=i*j
+        if palindrome_check(x)==True:
+            arr.append(x)
+print(max(arr))`,
+    "906609"
   )
 ];
