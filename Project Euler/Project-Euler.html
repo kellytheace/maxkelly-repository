@@ -45,7 +45,7 @@
       container.innerHTML = "";
 
       eulerSolutions
-        .filter(e => e.title.toLowerCase().includes(query) || e.number.toString().includes(query)) &&
+        .filter(e => (e.title.toLowerCase().includes(query) || e.number.toString().includes(query)) &&
       (selectedTag === "" || e.tags.includes(selectedTag))
     )
         .forEach(e => {
