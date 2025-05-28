@@ -1,8 +1,9 @@
 class EulerProblem {
-  constructor(number, title, description, solutionCode, result) {
+  constructor(number, title, description, tags, solutionCode, result) {
     this.number = number;
     this.title = title;
     this.description = description;
+    this.tags = tags;
     this.solutionCode = solutionCode;
     this.result = result;
   }
@@ -11,6 +12,8 @@ class EulerProblem {
     return `
       Problem ${this.number}: ${this.title}
       ${this.description}
+
+      Tags: ${this.tags.join(', ')}
       
       Solution Code:
       ${this.solutionCode}
@@ -37,7 +40,8 @@ for i in range (1,1000):
     if i%3 == 0 or i%5 == 0:
         result=result+i
 print(result)`,
-    "233168"
+    "233168",
+    ["divisibility","test"]
   ),
   new EulerProblem(
     2,
@@ -58,7 +62,8 @@ for i in arr:
     if i%2==0:
         result=result+i
 print('result is ', result)`,
-    "4613732"
+    "4613732",
+    ["divisibility", "fibonacci"]
   ),
   new EulerProblem(
     3,
@@ -73,6 +78,7 @@ while num>1:
             arr.append(i)
             break
 print(max(arr))`,
-    "6857"
+    "6857",
+    ["factorisation","prime-number"]
   )
 ];
