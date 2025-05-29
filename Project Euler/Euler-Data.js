@@ -193,5 +193,22 @@ for i in range(len(digits) - 13 + 1):
 print("Max product digits:", max_digits)
 print("Max product:", max_product)`,
     "23514624000"
+  ),
+  new EulerProblem(
+    9,
+    "Special Pythagorean Triplet",
+    "There exists exactly one Pythagorean triplet for which a+b+c=1000. Find the product abc.",
+    ["pythagorean-triple"],
+    `for a in range(1, 334):
+    for b in range(a + 1, 1000 - a):
+        c = 1000 - a - b
+        if a*a + b*b == c*c:
+            print(f"a={a}, b={b}, c={c}")
+            print("Product abc =", a * b * c)
+            break
+    else:
+        continue
+    break`,
+    "31875000"
   )
 ];
