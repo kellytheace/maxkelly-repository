@@ -110,5 +110,22 @@ for i in range(11, 21):
 
 print(result)`,
     "232792560"
+  ),
+  new EulerProblem(
+    6,
+    "Sum Square Difference",
+    "Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.",
+    ["arithmetic-progression","sequence-summation"],
+    `n1=0
+n2=0
+for i in range(1,100+1):
+    n1=n1+(i**2)
+    n2=n2+i
+n2=n2**2
+n3=n2-n1
+print(n1)
+print(n2)
+print(n3)`,
+    "25164150"
   )
 ];
