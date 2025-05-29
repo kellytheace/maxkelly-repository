@@ -210,5 +210,29 @@ print("Max product:", max_product)`,
         continue
     break`,
     "a=200, b=375, c=425, 31875000"
+  ),
+  new EulerProblem(
+    10,
+    "Summation of Primes",
+    "Find the sum of all the primes below two million.",
+    ["prime-number"],
+    `import math
+
+arr=[2]
+n1=3
+arb=2
+
+def prime_check(n):
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+for i in range(n1,2000000+1,2):
+    if prime_check(i)==True:
+        arb=arb+i
+
+print(arb)`,
+    "142913828922"
   )
 ];
