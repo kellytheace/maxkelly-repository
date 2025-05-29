@@ -209,6 +209,6 @@ print("Max product:", max_product)`,
     else:
         continue
     break`,
-    "31875000"
+    "a=200, b=375, c=425, 31875000"
   )
 ];
