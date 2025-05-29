@@ -127,5 +127,32 @@ print(n1)
 print(n2)
 print(n3)`,
     "25164150"
+  ),
+  new EulerProblem(
+    7,
+    "10,001st Prime",
+    "What is the 10,001st prime number?",
+    ["prime-number"],
+    `arr=[2]
+n1=3
+def prime_check(n):
+    iter = 0
+    reqIter = n - 2
+    for i in range(2,n):
+        if n%i==0:
+            return False
+        else:
+            iter += 1
+            if iter==reqIter:
+                arr.append(n)
+                return True
+    return True
+
+while len(arr)<10001:
+    prime_check(n1)
+    n1+=1
+
+print(max(arr))`,
+    "104743"
   )
 ];
