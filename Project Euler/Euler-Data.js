@@ -96,5 +96,19 @@ for i in range(1,999+1):
             arr.append(x)
 print(max(arr))`,
     "906609"
+  ),
+  new EulerProblem(
+    5,
+    "Smallest Multiple",
+    "What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?",
+    ["divisibility","factorisation"],
+    `import math
+
+result = 1
+for i in range(11, 21):
+    result = math.lcm(result, i)
+
+print(result)`,
+    "232792560"
   )
 ];
