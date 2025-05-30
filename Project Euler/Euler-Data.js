@@ -356,6 +356,6 @@ for row in range(0,17):
 result=max(verticalMaxProduct,horizontalMaxProduct,primaryDiagonalMaxProduct,secondaryDiagonalMaxProduct)
 print("result is ", result)`,
     "70600674",
-    "Images/PE_problem11.png"
+    "/maxkelly-repository/Images/PE_problem11.png"
   )
 ];
