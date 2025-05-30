@@ -68,6 +68,7 @@
           block.innerHTML = `
             <h2>Problem ${e.number}: ${e.title}</h2>
             <p><strong>Description:</strong> ${e.description}</p>
+            ${e.imageUrl ? `<img src="${e.imageUrl}" alt="Image for problem ${e.number}" style="max-width:100%; margin: 10px 0;">` : ""}
             <p><strong>Tags:</strong> ${e.tags.join(', ')}</p>
             <p><strong>Solution Code:</strong></p>
             <!-- <pre><code>${e.solutionCode}</code></pre> -->
