@@ -1,11 +1,12 @@
 class EulerProblem {
-  constructor(number, title, description, tags, solutionCode, result) {
+  constructor(number, title, description, tags, solutionCode, result, imageUrl = null) {
     this.number = number;
     this.title = title;
     this.description = description;
     this.tags = tags;
     this.solutionCode = solutionCode;
     this.result = result;
+    this.imageUrl = imageUrl;
   }
 
   display() {
