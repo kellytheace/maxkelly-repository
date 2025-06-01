@@ -439,5 +439,21 @@ n = 20
 paths = binomial_coefficient(2 * n, n)
 print("Number of paths in a 20x20 grid:", paths)`,
     "137846528820"
+  ),
+  new EulerProblem(
+    16,
+    "Power Digit Sum",
+    "What is the sum of the digits of the number 2^1000?",
+    ["large-numbers","digit-sum","power"],
+    `num=2**1000
+
+digits = [int(d) for d in str(num)]
+
+q=0
+for i in digits:
+  q+=i
+
+print("q is:",q)`,
+    "1366"
   )
 ];
