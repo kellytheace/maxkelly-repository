@@ -418,5 +418,27 @@ for i in range(1,1000000):
 print("final length is:", longest_length)
 print("number required:", longest_number)`,
     "837799"
+  ),
+  new EulerProblem(
+    15,
+    "Lattice Paths",
+    "Starting in the top left corner of a 2x2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner. How many such routes are there through a 20x20 grid?",
+    ["combinatorics"],
+    `import math
+
+def factorial(n):
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+
+def binomial_coefficient(n, k):
+    return factorial(n) // (factorial(k) * factorial(n - k))
+
+# For a 20x20 grid:
+n = 20
+paths = binomial_coefficient(2 * n, n)
+print("Number of paths in a 20x20 grid:", paths)`,
+    "137846528820"
   )
 ];
