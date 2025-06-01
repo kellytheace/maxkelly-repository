@@ -435,7 +435,6 @@ def factorial(n):
 def binomial_coefficient(n, k):
     return factorial(n) // (factorial(k) * factorial(n - k))
 
-# For a 20x20 grid:
 n = 20
 paths = binomial_coefficient(2 * n, n)
 print("Number of paths in a 20x20 grid:", paths)`,
