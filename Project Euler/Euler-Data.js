@@ -337,5 +337,34 @@ result=max(verticalMaxProduct,horizontalMaxProduct,primaryDiagonalMaxProduct,sec
 print("result is ", result)`,
     "70600674",
     "/maxkelly-repository/Images/PE_problem11.png"
+  ),
+  new EulerProblem(
+    12,
+    "Highly Divisible Triangular Number",
+    "What is the value of the first triangle number to have over five hundred divisors?",
+    ["divisor-count"],
+    `import math
+
+def get_divisors(n):
+    divisors = set()
+    root = int(math.sqrt(n))
+    for i in range(1, root + 1):
+        if n % i == 0:
+            divisors.add(i)
+            divisors.add(n // i)
+    return sorted(divisors)
+
+triangle = 0
+n=1
+arb=True
+while arb==True:
+    triangle += n
+    divisors = get_divisors(triangle)
+    n+=1
+    if len(divisors)>500:
+        print("number is:",triangle)
+        arb=False
+        break`,
+    "76576500"
   )
 ];
