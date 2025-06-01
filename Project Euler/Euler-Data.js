@@ -455,5 +455,47 @@ for i in digits:
 
 print("q is:",q)`,
     "1366"
+  ),
+  new EulerProblem(
+    17,
+    "Number Letter Counts",
+    "If all the numbers from 1 to 1000 inclusive were written out in words, how many letters would be used?",
+    ["word-problem","combinatorics"],
+    `def number_to_words(n):
+    ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    teens = ["ten", "eleven", "twelve", "thirteen", "fourteen",
+             "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
+    tens = ["", "", "twenty", "thirty", "forty", "fifty",
+            "sixty", "seventy", "eighty", "ninety"]
+
+    if n == 1000:
+        return "onethousand"
+
+    word = ""
+
+    hundreds_digit = n // 100
+    remainder = n % 100
+
+    if hundreds_digit > 0:
+        word += ones[hundreds_digit] + "hundred"
+        if remainder > 0:
+            word += "and"
+
+    if remainder >= 20:
+        word += tens[remainder // 10]
+        word += ones[remainder % 10]
+    elif remainder >= 10:
+        word += teens[remainder - 10]
+    else:
+        word += ones[remainder]
+
+    return word
+
+total_letters = 0
+for i in range(1, 1001):
+    total_letters += len(number_to_words(i))
+
+print("Total letters used from 1 to 1000:", total_letters)`,
+    "21124"
   )
 ];
