@@ -383,5 +383,40 @@ for i in range(0,10):
 number = int(''.join(map(str, resArr)))
 print(number)`,
     "5537376230"
+  ),
+  new EulerProblem(
+    14,
+    "Longest Collatz Sequence",
+    "Which starting number, under one million, produces the longest chain?",
+    ["collatz-sequence","recursion","longest-path"],
+    `def even(n):
+  n=int(n/2)
+  return n
+def odd(n):
+  n=int((3*n)+1)
+  return n
+def collatz(n):
+  count = 1
+  original_n = n
+  while n != 1:
+    if n % 2 == 0:
+      n = even(n)
+    else:
+      n = odd(n)
+    count += 1
+  return original_n, count
+
+longest_length = 0
+longest_number = 0
+
+for i in range(1,1000000):
+  number, length = collatz(i)
+  if length > longest_length:
+    longest_length = length
+    longest_number = number
+
+print("final length is:", longest_length)
+print("number required:", longest_number)`,
+    "837799"
   )
 ];
