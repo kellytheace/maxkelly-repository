@@ -595,7 +595,7 @@ print(t)`,
     "171"
   ),
   new EulerProblem(
-    19,
+    20,
     "Factorial Digit Sum",
     "Find the sum of the digits in the number 100!.",
     ["calendar","combinatorics"],
