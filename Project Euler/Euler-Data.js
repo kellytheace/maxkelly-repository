@@ -529,5 +529,69 @@ for i in range(len(paths)-1,0,-1):
         paths[i-1][j] += max(paths[i][j],paths[i][j+1])
 print(paths[0][0])`,
     "1074"
+  ),
+  new EulerProblem(
+    19,
+    "Counting Sundays",
+    "How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?",
+    ["calendar","combinatorics"],
+    `starts=[32,60,91,121,152,182,213,244,274,305,335,1]
+leap_starts=[32,61,92,122,153,183,214,245,275,306,336,1]
+
+def checkleap(y):
+    if y%100 == 0:
+        if y%400==0:
+            return True
+    elif y%4 == 0: return True
+    return False
+
+def countfunc(d):
+    k=0
+    for i in range(1,365):
+        for j in starts:
+            if i==j and d==7:
+                k=k+1
+        d=(d+1)
+        if d>7:
+            d=d%7
+    return k
+
+def leap_countfunc(d):
+    k=0
+    for i in range(1,366):
+        for j in leap_starts:
+            if i == j and d == 7:
+                k = k + 1
+        d = (d + 1)
+        if d > 7:
+            d = d % 7
+    return k
+
+def supercount(y):
+    index = y-1901
+    d=years[index]
+    if checkleap(y): return leap_countfunc(d)
+    else: return countfunc(d)
+
+years=[]
+for i in range(0,2000):
+    years.append(0)
+years[0]=2
+
+for r in range(1,2000):
+    if not checkleap(r+1900):
+        years[r]=years[r-1]+1
+        if years[r]>7:
+            years[r]=years[r]%7
+    if checkleap(r+1900):
+        years[r]=years[r-1]+2
+        if years[r]>7:
+            years[r]=years[r]%7
+
+t=0
+for n in range(1901,2001):
+    t=t+supercount(n)
+print(t)`,
+    "171"
   )
 ];
