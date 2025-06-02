@@ -593,5 +593,24 @@ for n in range(1901,2001):
     t=t+supercount(n)
 print(t)`,
     "171"
+  ),
+  new EulerProblem(
+    19,
+    "Factorial Digit Sum",
+    "Find the sum of the digits in the number 100!.",
+    ["calendar","combinatorics"],
+    `n=100
+res=1
+arb=0
+for i in range(n,0,-1):
+    res=res*i
+
+digits = [int(d) for d in str(res)]
+
+for i in digits:
+    arb=arb+i
+
+print("sum of digits is:",arb)`,
+    "648"
   )
 ];
