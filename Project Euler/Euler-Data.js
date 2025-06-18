@@ -612,5 +612,28 @@ for i in digits:
 
 print("sum of digits is:",arb)`,
     "648"
+  ),
+  new EulerProblem(
+    21,
+    "Amicable Numbers",
+    "Let d(n) be defined as the sum of proper divisors of n (numbers less than n which divide evenly into n). If d(a)=b and d(b)=a, where a is not equal to b, then a and b are an amicable pair and each of a and b are called amicable numbers. Evaluate the sum of all the amicable numbers under 10000.",
+    ["divisor-sum"],
+    `x=10000
+y=0
+def sumfac(n):
+    arr=0
+    for i in range(1,n):
+        if n % i == 0:
+            arr=arr+i
+    return arr
+
+for a in range(1,x):
+    b=sumfac(a)
+    if sumfac(b)==a:
+        if a!=b:
+            y=y+a
+
+print(y)`,
+    "31626"
   )
 ];
