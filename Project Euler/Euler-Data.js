@@ -695,5 +695,33 @@ total = sum(i for i in range(1, LIMIT + 1) if not can_be_written[i])
 
 print("Total:", total)`,
     "4179871"
+  ),
+  new EulerProblem(
+    24,
+    "Lexicographic Permutations",
+    "A permutation is an ordered arrangement of objects. For example, 3124 is one possible permutation of the digits 1, 2, 3 and 4. If all of the permutations are listed numerically or alphabetically, we call it lexicographic order. The lexicographic permutations of 0, 1 and 2 are: 012   021   102   120   201   210. What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?",
+    ["permutation","lexicographic-ordering","combinatorics"],
+    `import math
+
+
+fullList=[0,1,2,3,4,5,6,7,8,9]
+n1=0
+n2=9
+n3=0
+result = [0] * len(fullList)
+
+for x in range(0,len(fullList)):
+  for i in fullList:
+    if n1<1000000:
+      n1=n1+math.factorial(n2)
+      endi=i
+      result[n3]=i
+  n1=n1-math.factorial(n2)
+  n2=n2-1
+  n3=n3+1
+  fullList.remove(endi)
+
+print("Result:", ''.join(map(str, result)))`,
+    "2783915460"
   )
 ];
