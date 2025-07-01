@@ -723,5 +723,35 @@ for x in range(0,len(fullList)):
 
 print("Result:", ''.join(map(str, result)))`,
     "2783915460"
+  ),
+  new EulerProblem(
+    26,
+    "Reciprocal Cycles",
+    "Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.",
+    ["permutation","lexicographic-ordering","combinatorics"],
+    `def find_recurring_cycle_length(d):
+    remainders = {}
+    value = 1
+    position = 0
+
+    while value != 0:
+        if value in remainders:
+            return position - remainders[value]
+        remainders[value] = position
+        value = (value % d) * 10
+        position += 1
+    return 0
+
+max_length = 0
+best_d = 0
+
+for d in range(1, 1000):
+    cycle_length = find_recurring_cycle_length(d)
+    if cycle_length > max_length:
+        max_length = cycle_length
+        best_d = d
+
+print(f"Longest recurring cycle is for 1/{best_d}, with length {max_length}")`,
+    "983"
   )
 ];
