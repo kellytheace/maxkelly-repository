@@ -753,5 +753,47 @@ for d in range(1, 1000):
 
 print(f"Longest recurring cycle is for 1/{best_d}, with length {max_length}")`,
     "983"
+  ),
+  new EulerProblem(
+    27,
+    "Quadratic Primes",
+    "Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.",
+    ["quadratic-equation","prime-number","sequence-generator"],
+    `import math
+
+grandTotal = 0
+finalA = 0
+finalB = 0
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def func(a, b):
+    global grandTotal, finalA, finalB
+    total = 0
+    for n in range(0, 1000):
+        eq = n**2 + a*n + b
+        if is_prime(eq):
+            total += 1
+        else:
+            break
+    if total > grandTotal:
+        grandTotal = total
+        finalA = a
+        finalB = b
+
+for a in range(-999, 1000):
+    for b in range(-1000, 1001):
+        func(a, b)
+
+print("Final coefficient product is:", finalA * finalB)
+print("a =", finalA, ", b =", finalB)
+print("Max consecutive primes:", grandTotal)`,
+    "-59231"
   )
 ];
