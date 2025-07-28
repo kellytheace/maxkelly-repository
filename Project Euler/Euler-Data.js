@@ -795,5 +795,22 @@ print("Final coefficient product is:", finalA * finalB)
 print("a =", finalA, ", b =", finalB)
 print("Max consecutive primes:", grandTotal)`,
     "-59231"
+  ),
+  new EulerProblem(
+    28,
+    "Number spiral diagonals",
+    "Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:
+    dfgdfg",
+    ["grid-pattern"],
+    `n=1
+total=1
+
+for i in range(3,1001+1,2):
+    for j in range(1,5):
+        n=n+(i-1)
+        total=total+n
+
+print("Grand total is:",total)`,
+    "669171001"
   )
 ];
