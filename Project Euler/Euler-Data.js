@@ -757,7 +757,7 @@ print(f"Longest recurring cycle is for 1/{best_d}, with length {max_length}")`,
   new EulerProblem(
     27,
     "Quadratic Primes",
-    "Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.",
+    "Euler discovered the remarkable quadratic formula: n^2+n+41, which produces 40 primes for the consecutive integer values 0<=n<=39. Considering quadratics of the form: n^2 +an+b where |a|<1000 and |b|<=1000, find the product of the coefficients, a and b, for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n=0.",
     ["quadratic-equation","prime-number","sequence-generator"],
     `import math
 
