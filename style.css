@@ -1,6 +1,6 @@
 /* Use Helvetica and fallback to Arial or system sans-serif fonts */
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0 20px;
