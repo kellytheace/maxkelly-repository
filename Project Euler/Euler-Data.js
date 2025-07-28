@@ -115,7 +115,9 @@ print(result)`,
   new EulerProblem(
     6,
     "Sum Square Difference",
-    "Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.",
+    "The sum of the squares of the first ten natural numbers is \\(1^2 + 2^2 + \\ldots + 10^2 = 385\\).<br>" +
+  "The square of the sum is \\((1 + 2 + \\ldots + 10)^2 = 3025\\).<br>" +
+  "Hence the difference is \\(3025 - 385 = 2640\\).",
     ["arithmetic-progression","sequence-summation"],
     `n1=0
 n2=0
