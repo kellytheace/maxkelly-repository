@@ -799,8 +799,7 @@ print("Max consecutive primes:", grandTotal)`,
   new EulerProblem(
     28,
     "Number spiral diagonals",
-    "Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:
-    dfgdfg",
+    "Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed and has the sum of the numbers on the diagonals as 101. What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way?",
     ["grid-pattern"],
     `n=1
 total=1
@@ -812,5 +811,19 @@ for i in range(3,1001+1,2):
 
 print("Grand total is:",total)`,
     "669171001"
+  ),
+  new EulerProblem(
+    29,
+    "Distinct Powers",
+    "Consider all integer combinations of a^b where a=2,3,4,5 and b=2,3,4,5. If they are then placed in numerical order, with any repeats removed, we get the following sequence of 15 distinct terms: 4,8,9,16,25,27,32,64,81,125,243,256,625,1024,3125. How many distinct terms are in the sequenc generated for a and b being between 2 and 100?",
+    ["grid-pattern"],
+    `arr=[]
+for a in range (2,100+1):
+    for b in range (2,100+1):
+        arr.append((a**b))
+arrSortedUnique = sorted(set(arr))
+
+print("Length of unique array is:",len(arrSortedUnique))`,
+    "9183"
   )
 ];
