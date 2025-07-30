@@ -1,7 +1,6 @@
-/* Use Helvetica and fallback to Arial or system sans-serif fonts */
 body {
   font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
   padding: 0 20px;
   background-color: #f9f9f9;
@@ -10,17 +9,17 @@ body {
 
 header, footer {
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0; /* Reduced from 20px */
   background-color: #fff;
   border-bottom: 1px solid #ddd;
 }
 
 nav {
-  margin: 20px 0;
+  margin: 10px 0; /* Reduced from 20px */
 }
 
 section {
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* Reduced from 30px */
 }
 
 ul.project-links {
@@ -29,13 +28,14 @@ ul.project-links {
 }
 
 ul.project-links li {
-  margin-bottom: 8px;
+  margin-bottom: 5px; /* Reduced from 8px */
 }
 
 h2 {
   border-bottom: 1px solid #ccc;
-  padding-bottom: 5px;
-  margin-top: 30px;
+  padding-bottom: 4px;
+  margin-top: 20px; /* Reduced from 30px */
+  margin-bottom: 10px;
 }
 
 a {
