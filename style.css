@@ -1,6 +1,7 @@
 body {
   font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5;
+  font-size: 17px; /* Increased from browser default (~16px) */
   margin: 0;
   padding: 0 20px;
   background-color: #f9f9f9;
@@ -9,17 +10,28 @@ body {
 
 header, footer {
   text-align: center;
-  padding: 10px 0; /* Reduced from 20px */
+  padding: 10px 0;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
 }
 
+header h1 {
+  font-size: 26px; /* Reduced from ~32px default */
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+header p {
+  margin: 5px 0 0 0;
+  font-size: 16px;
+}
+
 nav {
-  margin: 10px 0; /* Reduced from 20px */
+  margin: 10px 0;
 }
 
 section {
-  margin-bottom: 20px; /* Reduced from 30px */
+  margin-bottom: 20px;
 }
 
 ul.project-links {
@@ -28,19 +40,21 @@ ul.project-links {
 }
 
 ul.project-links li {
-  margin-bottom: 5px; /* Reduced from 8px */
+  margin-bottom: 5px;
 }
 
 h2 {
+  font-size: 20px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 4px;
-  margin-top: 20px; /* Reduced from 30px */
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
 a {
   color: #0033cc;
   text-decoration: none;
+  font-size: 17px;
 }
 
 a:hover {
