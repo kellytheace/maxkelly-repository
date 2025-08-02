@@ -47,3 +47,10 @@ input {
 }
 
 /* Add more languages as needed */
+
+/* Language Badge Image Styles */
+.language-badge {
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
