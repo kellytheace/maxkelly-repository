@@ -20,3 +20,30 @@ input {
   margin-bottom: 20px;
   width: 100%;
 }
+
+/* Language Badge Styles */
+
+.badge {
+  display: inline-block;
+  padding: 2px 6px;
+  margin-left: 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+}
+
+.badge.python {
+  background-color: #306998;
+}
+
+.badge.cplusplus {
+  background-color: #00599C;
+}
+
+.badge.javascript {
+  background-color: #F0DB4F;
+  color: black;
+}
+
+/* Add more languages as needed */
