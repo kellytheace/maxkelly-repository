@@ -76,3 +76,12 @@ a:hover {
   display: inline-block;
   object-fit: contain;
 }
+
+/* Specific Badges */
+.badge-python {
+  background-image: url('https://raw.githubusercontent.com/kellytheace/maxkelly-repository/main/Images/Python-Logo.png');
+}
+
+.badge-cpp {
+  background-image: url('https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white');
+}
