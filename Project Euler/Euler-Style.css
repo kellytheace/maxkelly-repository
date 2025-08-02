@@ -51,6 +51,8 @@ input {
 /* Language Badge Image Styles */
 .language-badge {
   height: 18px;
+  width: auto;              /* Maintain aspect ratio */
+  max-width: 30px;          /* Force a cap width */
   vertical-align: middle;
   margin-left: 8px;
 }
