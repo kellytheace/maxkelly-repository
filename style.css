@@ -69,7 +69,7 @@ a:hover {
 
 /* Language Badge Image Styles */
 .language-badge {
-  height: 36px;  /* Increase from 16px to 32px (double size) */
+  height: 24px;  /* Increase from 16px to 32px (double size) */
   width: auto;
   vertical-align: middle;
   margin-left: 4px;
