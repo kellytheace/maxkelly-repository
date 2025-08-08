@@ -1138,26 +1138,25 @@ print("Final value is:",maxValue)`,
   ),
   new EulerProblem(
     39,
-    "X",
-    "X",
-    ["X"],
-    `import numpy as np
+    "Integer Right Triangles",
+    "If p is the perimeter of a right angle triangle with integral length sides {a,b,c}, there are exactly three solutions for p=120: {20,48,52}, {24,45,51}, {30,40,50}. For which value of p ≤ 1000, is the number of solutions maximised?",
+    ["geometry","partition","pythagorean-triple"],
+    `from math import gcd
 
-n=1000
+limit = 1000
+counts = [0]*(limit+1)
 
-arr=[]
-for a in range (1,n+1):
-    for b in range(a,n+1):
-        for c in range(b+1,n+1):
-            if a**2 + b**2 == c**2:
-                total=a+b+c
-                arr.append(total)
+# primitive perimeters p0 = 2*m*(m+n); add multiples
+m_max = int((limit/2)**0.5) + 1
+for m in range(2, m_max+1):
+    for n in range(1, m):
+        if (m-n) % 2 == 1 and gcd(m, n) == 1:
+            p0 = 2*m*(m+n)
+            for p in range(p0, limit+1, p0):
+                counts[p] += 1
 
-finalArr=np.array(arr)
-values, counts = np.unique(finalArr, return_counts=True)
-most_common = values[np.argmax(counts)]
-print(most_common)`,
-    "X"
+print(max(range(limit+1), key=counts.__getitem__))`,
+    "840"
   ),
   new EulerProblem(
     40,
