@@ -957,5 +957,262 @@ print("Final simplified product:", product)
 print("Answer (denominator):", product.denominator)
 `,
     "100"
+  ),
+  new EulerProblem(
+    34,
+    "Digit Factorials",
+    "145 is a curious number, as 1!+4!+5!=1+24+120=145. Find the sum of all numbers which are equal to the sum of the factorial of their digits.",
+    ["factorial","digit-sum"],
+    `grandTotal=0
+
+def digitsFunc(n):
+    return [int(d) for d in str(n)]
+
+def factorial(n):
+    res=1
+    for i in range(1,n+1):
+        res=res*i
+    return res
+
+
+for n in range (7,10000001):
+    total=0
+    x=digitsFunc(n)
+    for m in x:
+        total=total+factorial(m)
+    if total==n:
+        grandTotal=grandTotal+n
+
+print('Grand total is:',grandTotal)`,
+    "40730"
+  ),
+  new EulerProblem(
+    35,
+    "Circular Primes",
+    "The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime. There are thirteen such primes below 100: 2,3,5,7,11,13,17,31,37,71,73,79, and 97. How many circular primes are there below one million?",
+    ["prime-number","digit-manipulation"],
+    `def is_prime(x):
+  if x <= 1:
+      return False
+  if x == 2:
+      return True
+  if x % 2 == 0:
+      return False
+  for i in range(3, int(x**0.5) + 1, 2):
+      if x % i == 0:
+          return False
+  return True
+
+def is_circular_prime(n):
+  digits = [int(d) for d in str(n)]
+  num_length = len(digits)
+
+  for i in range(num_length):
+      rotated = digits[i:] + digits[:i]  # Rotate digits
+      rotated_num = int(''.join(map(str, rotated)))
+      if not is_prime(rotated_num):
+          return False
+  return True
+
+total=0
+
+for w in range(1,1000000):
+  if is_circular_prime(w):
+    total=total+1
+
+print("Result is:",total)`,
+    "55"
+  ),
+  new EulerProblem(
+    36,
+    "Double-base Palindromes",
+    "The decimal number, 585=1001001001^^2(binary), is palindromic in both bases. Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2. (Please note that the palindromic number, in either base, may not include leading zeros.)",
+    ["palindrome","number-base"],
+    `def palindromeCheck(n):
+    return str(n) == str(n)[::-1]
+
+def binary(n):
+    if n == 0:
+        return "0"
+    binary = ""
+    power = 0
+    while 2 ** power <= n:
+        power += 1
+    power -= 1
+    for p in range(power, -1, -1):
+        if 2 ** p <= n:
+            binary += "1"
+            n -= 2 ** p
+        else:
+            binary += "0"
+    return binary
+
+total=0
+
+for i in range(1,1000000):
+    if palindromeCheck(i)==True:
+        if palindromeCheck(binary(i))==True:
+            total=total+i
+
+print("Result is:",total)`,
+    "872187"
+  ),
+  new EulerProblem(
+    37,
+    "Truncatable Primes",
+    "The number 3797 has an interesting property. Being prime itself, it is possible to continuously remove digits from left to right, and remain prime at each stage: 3797, 797, 97, and 7. Similarly we can work from right to left: 3797, 379, 37, and 3. Find the sum of the only eleven primes that are both truncatable from left to right and right to left. NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.",
+    ["prime-number","digit-manipulation"],
+    `def is_prime(x):
+    if x <= 1:
+        return False
+    if x == 2:
+        return True
+    if x % 2 == 0:
+        return False
+    for i in range(3, int(x**0.5) + 1, 2):
+        if x % i == 0:
+            return False
+    return True
+
+def is_forward_truncatable(n):
+    digits = [int(d) for d in str(n)]
+    for i in range(len(digits)):
+        truncated = digits[i:]
+        truncated_num = int(''.join(map(str, truncated)))
+        if not is_prime(truncated_num):
+            return False
+    return True
+
+def is_backward_truncatable(n):
+    digits = [int(d) for d in str(n)]
+    for i in range(1, len(digits)+1):
+        truncated = digits[:i]
+        truncated_num = int(''.join(map(str, truncated)))
+        if not is_prime(truncated_num):
+            return False
+    return True
+
+# Main search loop
+found = 0
+n = 11  # start from 11 (as 2, 3, 5, 7 are excluded)
+grand_total = 0
+
+while found < 11:
+    if is_forward_truncatable(n):
+        if is_backward_truncatable(n):
+            found += 1
+            grand_total += n
+            print(f"Found #{found}: {n}")
+    n += 2  # Skip even numbers
+
+print("Sum of all 11 truncatable primes:", grand_total)
+`,
+    "748317"
+  ),
+  new EulerProblem(
+    38,
+    "Pandigital Multiples",
+    "Take the number 192 and multiply it by each of 1, 2, and 3: 192 × 1 = 192, 192 × 2 = 384, 192 × 3 = 576. By concatenating each product we get the 1 to 9 pandigital, 192384576. We will call 192384576 the concatenated product of 192 and (1, 2, 3). The same can be achieved by starting with 9 and multiplying by 1, 2, 3, 4, and 5, giving the pandigital 918273645, which is the concatenated product of 9 and (1, 2, 3, 4, 5). What is the largest 1 to 9 pandigital 9-digit number that can be formed as the concatenated product of an integer with (1, 2, …, n) where n > 1?",
+    ["pandigital","digit-manipulation"],
+    `n1=192
+maxValue=0
+
+def panCheck(n1):
+    global maxValue
+    for i in range(1,10):
+        n2=n1*i
+        digits = [int(d) for d in str(n2)]
+        arr.extend(digits)
+        if sorted(arr) == [1, 2, 3, 4, 5, 6, 7, 8, 9]:
+            n3=int(''.join(map(str, arr)))
+            if n3>maxValue:
+                maxValue=n3
+            break
+
+for i in range(1,1000000):
+    arr=[]
+    panCheck(i)
+
+print("Final value is:",maxValue)`,
+    "932718654"
+  ),
+  new EulerProblem(
+    39,
+    "X",
+    "X",
+    ["X"],
+    `import numpy as np
+
+n=1000
+
+arr=[]
+for a in range (1,n+1):
+    for b in range(a,n+1):
+        for c in range(b+1,n+1):
+            if a**2 + b**2 == c**2:
+                total=a+b+c
+                arr.append(total)
+
+finalArr=np.array(arr)
+values, counts = np.unique(finalArr, return_counts=True)
+most_common = values[np.argmax(counts)]
+print(most_common)`,
+    "X"
+  ),
+  new EulerProblem(
+    40,
+    "X",
+    "X",
+    ["X"],
+    `X`,
+    "X"
+  ),
+  new EulerProblem(
+    41,
+    "X",
+    "X",
+    ["X"],
+    `X`,
+    "X"
+  ),
+  new EulerProblem(
+    42,
+    "X",
+    "X",
+    ["X"],
+    `X`,
+    "X"
+  ),
+  new EulerProblem(
+    43,
+    "X",
+    "X",
+    ["X"],
+    `X`,
+    "X"
+  ),
+  new EulerProblem(
+    44,
+    "X",
+    "X",
+    ["X"],
+    `X`,
+    "X"
+  ),
+  new EulerProblem(
+    45,
+    "X",
+    "X",
+    ["X"],
+    `X`,
+    "X"
+  ),
+  new EulerProblem(
+    46,
+    "X",
+    "X",
+    ["X"],
+    `X`,
+    "X"
   )
 ];
