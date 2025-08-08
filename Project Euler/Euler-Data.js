@@ -818,7 +818,7 @@ print("Grand total is:",total)`,
     29,
     "Distinct Powers",
     "Consider all integer combinations of a^b where a=2,3,4,5 and b=2,3,4,5. If they are then placed in numerical order, with any repeats removed, we get the following sequence of 15 distinct terms: 4,8,9,16,25,27,32,64,81,125,243,256,625,1024,3125. How many distinct terms are in the sequenc generated for a and b being between 2 and 100?",
-    ["grid-pattern"],
+    ["sequence-generator"],
     `arr=[]
 for a in range (2,100+1):
     for b in range (2,100+1):
@@ -827,5 +827,135 @@ arrSortedUnique = sorted(set(arr))
 
 print("Length of unique array is:",len(arrSortedUnique))`,
     "9183"
+  ),
+  new EulerProblem(
+    30,
+    "Digit Fifth Powers",
+    "Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits: 1634=1^4+6^4+3^4+4^4, 8208=8^4+2^4+0^4+8^4, 9474=9^4+4^4+7^4+4^4. The sum of these numbers is 19316. Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.",
+    ["power","digit-sum"],
+    `def sumPowers(num):
+    digits = [int(d) for d in str(num)]
+    return sum(d**5 for d in digits)
+
+total=0
+
+for i in range(2,500000):
+    if sumPowers(i) == i:
+        total += i
+
+print("Result is:",total)`,
+    "443839"
+  ),
+  new EulerProblem(
+    31,
+    "Coin Sums",
+    "In the United Kingdom the currency is made up of pound (£) and pence (p). There are eight coins in general circulation: 1p, 2p, 5p, 10p, 20p, 50p, £1 (100p), and £2 (200p). It is possible to make £2 in the following way: 1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p. How many different ways can £2 be made using any number of coins?",
+    ["partition","combinatorics"],
+    `count = 0
+for a in range(0, 201, 200):     # 200p coin
+    for b in range(0, 201 - a, 100):  # 100p coin
+        for c in range(0, 201 - a - b, 50):
+            print('£2 is:', a, '@1 is:', b, '50p is:', c)
+            for d in range(0, 201 - a - b - c, 20):
+                for e in range(0, 201 - a - b - c - d, 10):
+                    for f in range(0, 201 - a - b - c - d - e, 5):
+                        for g in range(0, 201 - a - b - c - d - e - f, 2):
+                            for h in range(0, 201 - a - b - c - d - e - f - g + 1):
+                                if a + b + c + d + e + f + g + h == 200:
+                                    count += 1
+
+print("Count is:",count)`,
+    "73682"
+  ),
+  new EulerProblem(
+    32,
+    "Digit Fifth Powers",
+    "We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once; for example, the 5-digit number, 15234, is 1 through 5 pandigital. The product 7254 is unusual, as the identity, 39*186=7254, containing multiplicand, multiplier, and product is 1 through 9 pandigital. Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through 9 pandigital. HINT: Some products can be obtained in more than one way so be sure to only include it once in your sum.",
+    ["pandigital"],
+    `def digitsFunc(n):
+    return [int(d) for d in str(n)]
+
+def is_pandigital(a, b, c):
+    digits = digitsFunc(a) + digitsFunc(b) + digitsFunc(c)
+    return sorted(digits) == [1,2,3,4,5,6,7,8,9]
+
+products = set()
+
+# 1x4 case
+for a in range(2, 9):
+    for b in range(1345, 4987):
+        c = a * b
+        if c > 9876:
+            continue
+        if is_pandigital(a, b, c):
+            products.add(c)
+
+# 2x3 case
+for a in range(12, 81):
+    for b in range(123, 823):
+        c = a * b
+        if c > 9876:
+            continue
+        if is_pandigital(a, b, c):
+            products.add(c)
+
+print("Total is:", sum(products))
+`,
+    "45228"
+  ),
+  new EulerProblem(
+    33,
+    "Digit Cancelling Fractions",
+    "The fraction 49/98 is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe that 49/98=4/8, which is correct, is obtained by cancelling the 9s. We shall consider fractions like, 30/50=3/5, to be trivial examples. There are exactly four non-trivial examples of this type of fraction, less than one in value, and containing two digits in the numerator and denominator. If the product of these four fractions is given in its lowest common terms, find the value of the denominator.",
+    ["fraction"],
+    `from fractions import Fraction
+
+valid_fractions = []
+
+def digitsFunc(n):
+    return [int(d) for d in str(n)]
+
+def removeDigits(x, y):
+    fracRes = x / y
+    x_digits = digitsFunc(x)
+    y_digits = digitsFunc(y)
+
+    if x_digits[1] == 0 and y_digits[1] == 0:
+        return
+
+    shared_digits = list(set(x_digits) & set(y_digits))
+    if not shared_digits:
+        return
+
+    for d in shared_digits:
+        x_copy = x_digits.copy()
+        y_copy = y_digits.copy()
+
+        if d in x_copy:
+            x_copy.remove(d)
+        if d in y_copy:
+            y_copy.remove(d)
+
+        if len(x_copy) == 1 and len(y_copy) == 1 and y_copy[0] != 0:
+            a = x_copy[0]
+            b = y_copy[0]
+            newFracRes = a / b
+            if abs(newFracRes - fracRes) < 1e-10:
+                valid_fractions.append(Fraction(x, y))
+
+# Loop over all 2-digit numerator/denominator pairs
+for x in range(10, 100):
+    for y in range(x + 1, 100):  # y > x to keep value < 1
+        removeDigits(x, y)
+
+# Multiply all valid fractions together
+product = Fraction(1, 1)
+for frac in valid_fractions:
+    product *= frac
+
+print("Final simplified product:", product)
+print("Answer (denominator):", product.denominator)
+`,
+    "100"
   )
 ];
