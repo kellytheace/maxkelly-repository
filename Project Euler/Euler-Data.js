@@ -1587,5 +1587,37 @@ print("Grand total is:", total)
     ["X"],
     `X`,
     "X"
+  ),
+  new EulerProblem(
+    47,
+    "X",
+    "X",
+    ["X"],
+    `X`,
+    "X"
+  ),
+  new EulerProblem(
+    48,
+    "X",
+    "X",
+    ["X"],
+    `X`,
+    "X"
+  ),
+  new EulerProblem(
+    49,
+    "X",
+    "X",
+    ["X"],
+    `X`,
+    "X"
+  ),
+  new EulerProblem(
+    50,
+    "X",
+    "X",
+    ["X"],
+    `X`,
+    "X"
   )
 ];
