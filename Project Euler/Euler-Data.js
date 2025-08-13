@@ -1680,11 +1680,16 @@ for i in range(1,10000000):
   ),
   new EulerProblem(
     48,
-    "X",
-    "X",
-    ["X"],
-    `X`,
-    "X"
+    "Self Powers",
+    "The series, 1^1+2^2+3^3+…+10^10=10,405,071,317. Find the last ten digits of the series, 1^1+2^2+3^3+…+1000^1000.",
+    ["sequence-summation","power","modular-arithmetic","large-numbers"],
+    `total=0
+
+for i in range(1,1001):
+    total = total+(i**i)
+
+print("Grand total:",total)`,
+    "9110846700"
   ),
   new EulerProblem(
     49,
