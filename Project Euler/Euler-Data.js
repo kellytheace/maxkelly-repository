@@ -1613,11 +1613,36 @@ while True:
   ),
   new EulerProblem(
     46,
-    "X",
-    "X",
-    ["X"],
-    `X`,
-    "X"
+    "Goldbach's other conjecture",
+    "It was proposed by Christian Goldbach that every odd composite number can be written as the sum of a prime and twice a square. 9 = 7 + 2×1² 15 = 7 + 2×2² 21 = 3 + 2×3² 25 = 7 + 2×3² 27 = 19 + 2×2² 33 = 31 + 2×1². It turns out that the conjecture was false. What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?",
+    ["prime-number","square-number"],
+    `import math
+
+def prime_check(n):
+    if n < 2:
+        return False
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Check each odd number
+for i in range(3, 10000, 2):  # only odd numbers
+    if not prime_check(i):  # odd composite
+        found = False
+        for p in range(2, i):
+            if prime_check(p):
+                remainder = i - p
+                if remainder % 2 == 0:
+                    k = int(math.sqrt(remainder // 2))
+                    if 2 * k * k == remainder:
+                        found = True
+                        break
+        if not found:
+            print("Smallest odd composite not fitting conjecture is:", i)
+            break
+`,
+    "5777"
   ),
   new EulerProblem(
     47,
