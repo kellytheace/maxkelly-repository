@@ -1,0 +1,20 @@
+/* Override LaTeX theme width */
+body {
+  max-width: 1200px !important; /* widen content */
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Make code blocks stretch nicely */
+pre {
+  background: #f7f7f7;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto; /* adds horizontal scroll if needed */
+}
+
+/* Slightly larger code font */
+code {
+  font-family: "Fira Code", monospace;
+  font-size: 0.95em;
+}
