@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Euler Problem 48</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Project Euler – Problem 48</h1>
+    <p><em>Self Powers</em></p>
+  </header>
+
+  <section class="problem">
+    <h2>Problem Statement</h2>
+    <p>Find the last ten digits of the series 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 1000<sup>1000</sup>.</p>
+  </section>
+
+  <section class="theory">
+    <h2>Theory & Approach</h2>
+    <p>
+      Naively computing 1000<sup>1000</sup> is impossible due to size, but modular arithmetic
+      lets us keep only the last 10 digits at each step.  
+      We sum (n<sup>n</sup> mod 10<sup>10</sup>) for n = 1 to 1000.
+    </p>
+  </section>
+
+  <section class="code">
+    <h2>Python Solution</h2>
+    <pre><code class="language-python">
+total = sum(pow(i, i, 10**10) for i in range(1, 1001))
+print(str(total)[-10:])
+    </code></pre>
+  </section>
+
+  <section class="answer">
+    <h2>Final Answer</h2>
+    <p><strong>9110846700</strong></p>
+  </section>
+
+</body>
+</html>
