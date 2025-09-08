@@ -474,3 +474,20 @@ a[href*="flattr.com/submit/auto"] { float: right; }
 
 
 /* Media Queries */
+
+/* === Site title (centered & bigger) === */
+.site-title{
+  display:block;
+  text-align:center;
+  margin:1.2rem 0;
+  font-weight:700;
+  font-size:clamp(1.8rem, 4vw, 2.6rem);
+  line-height:1.2;
+  letter-spacing:-0.02em;
+}
+.site-title,
+.site-title:visited{
+  color:#000;
+  text-decoration:none;
+}
+.site-title:hover{ text-decoration:underline; }
