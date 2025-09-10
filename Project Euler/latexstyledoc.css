@@ -29,7 +29,7 @@
 .container {
   position: relative;
   width: 100%;
-  max-width: 66.666vw;
+  max-width: 75vw;
   margin: 0 auto;
   padding: 0 2em;
   box-sizing: border-box; 
