@@ -499,7 +499,7 @@ a[href*="flattr.com/submit/auto"] { float: right; }
   margin-left: 4px;   /* small gap from the text */
 }
 .language-badge {
-  height: 20px;       /* make icons 30px tall */
+  height: 24px;       /* make icons 30px tall */
   width: auto;        /* keep aspect ratio */
   vertical-align: middle;
   display: inline-block;
