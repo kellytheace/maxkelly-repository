@@ -66,11 +66,10 @@ table.prevnext .center img.projecteuler {
   transition: filter 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* trigger glow whether you hover the image or the link around it */
+/* Grey glow on hover */
 table.prevnext .center img.projecteuler:hover,
 table.prevnext .center a:hover img.projecteuler {
-  /* white glow */
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.95))
-          drop-shadow(0 0 16px rgba(255, 255, 255, 0.7));
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6) !important;
+  filter: drop-shadow(0 0 8px rgba(128, 128, 128, 0.9))   /* darker grey */
+          drop-shadow(0 0 16px rgba(128, 128, 128, 0.6)); /* softer outer glow */
+  box-shadow: 0 0 12px rgba(128, 128, 128, 0.5) !important;
 }
