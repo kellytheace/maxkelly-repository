@@ -45,26 +45,41 @@
   </section>
 
   <section class="theory">
-    <h2>Theory & Approach</h2>
     <h2>Theory &amp; Approach</h2>
-    <h3>Scalable solution (Gauss + inclusion–exclusion)</h3>
-    <p>
-      The sum of the first <em>n</em> natural numbers is
-      <code>n(n+1)/2</code>. For multiples of a number <em>d</em> below a limit
-      <em>L</em>, there are <code>k = ⌊(L−1)/d⌋</code> such multiples
-      (<code>d, 2d, …, kd</code>), and their sum is
-      <code>d · k · (k+1) / 2</code>.
-    </p>
-    <p>
-      We want multiples of 3 or 5, so we use inclusion–exclusion:
-      <code>sum(3) + sum(5) − sum(15)</code>, where each <code>sum(d)</code> is computed with the
-      closed form above and we use <code>L = 1000</code> (exclude the limit itself).
-    </p>
+    <h3>Closed-form via Gauss</h3>
+  <p>
+    The sum of the first $n$ natural numbers is
+  </p>
+  <p style="text-align:center;">
+    $$1+2+\cdots+n=\frac{n(n+1)}{2}\,.$$
+  </p>
 
-    <h3>Note on the obvious loop</h3>
-    <p>
-      A simple loop that tests each <code>i</code> with <code>i % 3 == 0 or i % 5 == 0</code> works and is easy to read,
-      but it runs in <code>O(L)</code> time. The closed form above is <code>O(1)</code> and scales to very large limits.
+  <p>
+    For multiples of a positive integer $d$ strictly below a limit $L$, the multiples are
+    $d, 2d, \dots, kd$ where
+    $$k=\left\lfloor\frac{L-1}{d}\right\rfloor.$$
+    Their sum is
+  </p>
+  <p style="text-align:center;">
+    $$S_d(L)=d\cdot\frac{k(k+1)}{2}\,.$$
+  </p>
+
+  <h3>Inclusion–Exclusion (3 or 5)</h3>
+  <p>
+    Numbers divisible by $3$ or $5$ are counted by
+  </p>
+  <p style="text-align:center;">
+    $$S(L)=S_3(L)+S_5(L)-S_{15}(L),$$
+  </p>
+  <p>
+    because multiples of $15$ are included in both $S_3$ and $S_5$.  
+    For this problem use $L=1000$ (we exclude the limit itself).
+  </p>
+
+  <h3>Why this is better than a loop</h3>
+  <p>
+    A brute-force loop checks every $i&lt;L$ (time $O(L)$). The closed-form above uses a constant number
+    of arithmetic operations (time $O(1)$), so it scales to very large $L$.
     </p>
   </section>
 
