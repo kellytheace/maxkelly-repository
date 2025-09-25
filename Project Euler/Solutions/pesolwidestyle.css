@@ -66,10 +66,10 @@ table.prevnext .center img.projecteuler {
   transition: filter 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Grey glow on hover */
+/* Light grey glow on hover */
 table.prevnext .center img.projecteuler:hover,
 table.prevnext .center a:hover img.projecteuler {
-  filter: drop-shadow(0 0 8px rgba(128, 128, 128, 0.9))   /* darker grey */
-          drop-shadow(0 0 16px rgba(128, 128, 128, 0.6)); /* softer outer glow */
-  box-shadow: 0 0 12px rgba(128, 128, 128, 0.5) !important;
+  filter: drop-shadow(0 0 8px rgba(215, 215, 215, 0.95))   /* soft inner glow */
+          drop-shadow(0 0 16px rgba(215, 215, 215, 0.7));  /* outer glow */
+  box-shadow: 0 0 12px rgba(215, 215, 215, 0.6) !important;
 }
