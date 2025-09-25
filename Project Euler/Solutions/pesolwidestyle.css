@@ -31,7 +31,14 @@ table.prevnext td { padding: 0.5rem 0; }
 table.prevnext .left   { text-align: left;  }
 table.prevnext .center { text-align: center;}
 table.prevnext .right  { text-align: right; }
-table.prevnext a { font-weight: 600; }
+table.prevnext a {
+  font-weight: 600;
+  text-decoration: none;   /* no underline normally */
+}
+
+table.prevnext a:hover {
+  text-decoration: underline; /* underline only on hover */
+}
 
 /* Remove LaTeX.css table borders for the prev/next bar */
 table.prevnext,
