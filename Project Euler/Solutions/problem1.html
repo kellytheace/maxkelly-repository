@@ -39,26 +39,44 @@
 
   <section class="problem">
     <h2>Problem Statement</h2>
+    <p>If we list all the natural numbers below <strong>10</strong> that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.</p>
     <p>If we list all the natural numbers below 1000 thre are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.</p>
     <p>Find the sum of all the multiples of 3 or 5 below 1000.</p>
   </section>
 
   <section class="theory">
+    <h2>Theory & Approach</h2>
     <h2>Theory &amp; Approach</h2>
+    <h3>Scalable solution (Gauss + inclusion–exclusion)</h3>
     <p>
-      Naively computing 1000<sup>1000</sup> is impossible due to size, but modular arithmetic
-      lets us keep only the last 10 digits at each step.  
-      We sum (n<sup>n</sup> mod 10<sup>10</sup>) for n = 1 to 1000.
+      The sum of the first <em>n</em> natural numbers is
+      <code>n(n+1)/2</code>. For multiples of a number <em>d</em> below a limit
+      <em>L</em>, there are <code>k = ⌊(L−1)/d⌋</code> such multiples
+      (<code>d, 2d, …, kd</code>), and their sum is
+      <code>d · k · (k+1) / 2</code>.
+    </p>
+    <p>
+      We want multiples of 3 or 5, so we use inclusion–exclusion:
+      <code>sum(3) + sum(5) − sum(15)</code>, where each <code>sum(d)</code> is computed with the
+      closed form above and we use <code>L = 1000</code> (exclude the limit itself).
+    </p>
+
+    <h3>Note on the obvious loop</h3>
+    <p>
+      A simple loop that tests each <code>i</code> with <code>i % 3 == 0 or i % 5 == 0</code> works and is easy to read,
+      but it runs in <code>O(L)</code> time. The closed form above is <code>O(1)</code> and scales to very large limits.
     </p>
   </section>
 
   <section class="code">
     <h2>Python Solution</h2>
     <pre><code class="language-python">
-result=0
-for i in range (1,1000):
-    if i%3 == 0 or i%5 == 0:
-        result=result+i
+def sumn(limit, d):
+    k = (limit - 1) // d
+    return d * k * (k + 1) // 2
+
+limit = 1000
+result = sumn(limit, 3) + sumn(limit, 5) - sumn(limit, 15)
 print(result)
     </code></pre>
   </section>
