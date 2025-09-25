@@ -69,8 +69,8 @@ table.prevnext .center img.projecteuler {
 /* trigger glow whether you hover the image or the link around it */
 table.prevnext .center img.projecteuler:hover,
 table.prevnext .center a:hover img.projecteuler {
-  /* visible on white backgrounds */
-  filter: drop-shadow(0 0 8px rgba(0, 140, 255, 0.85))
-          drop-shadow(0 0 16px rgba(0, 140, 255, 0.55));
-  box-shadow: 0 0 12px rgba(0, 140, 255, 0.4) !important;
+  /* white glow */
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.95))
+          drop-shadow(0 0 16px rgba(255, 255, 255, 0.7));
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6) !important;
 }
