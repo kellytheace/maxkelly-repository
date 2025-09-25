@@ -38,3 +38,11 @@ header h1 {
   text-align: left;
   margin-top: 0;
 }
+
+/* Simple prev/next bar (top only) */
+table.prevnext { width: 100%; margin: 1rem 0; border-collapse: collapse; }
+table.prevnext td { padding: 0.5rem 0; }
+table.prevnext .left   { text-align: left;  }
+table.prevnext .center { text-align: center;}
+table.prevnext .right  { text-align: right; }
+table.prevnext a { text-decoration: none; font-weight: 600; }
