@@ -19,20 +19,6 @@ code {
   font-size: 0.95em;
 }
 
-/* === Center only the linked image, not the title === */
-header > a:first-child {
-  display: block;
-  width: fit-content;
-  margin: 0 auto 0.75rem; /* center horizontally, add space below */
-}
-
-header > a:first-child img {
-  display: block;
-  max-width: 420px; /* optional cap */
-  width: 100%;
-  height: auto;
-}
-
 /* Keep the title left-aligned */
 header h1 {
   text-align: left;
