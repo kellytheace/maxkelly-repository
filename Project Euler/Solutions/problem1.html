@@ -5,7 +5,12 @@
   <title>Project Euler Problem 1</title>
   
   <link rel="stylesheet" href="https://latex.vercel.app/style.css">
-  <link rel="stylesheet" href="widestyle.css">
+  <link rel="stylesheet" href="pesolwidestyle.css">
+  <!-- (optional) Prism for syntax highlighting (from their Getting Started) -->
+  <link rel="stylesheet" href="https://latex.vercel.app/prism/prism.css" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+  <!-- Add Python language component so Python highlights correctly -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
 </head>
 <body>
 
@@ -21,7 +26,7 @@
   </section>
 
   <section class="theory">
-    <h2>Theory & Approach</h2>
+    <h2>Theory &amp; Approach</h2>
     <p>
       Naively computing 1000<sup>1000</sup> is impossible due to size, but modular arithmetic
       lets us keep only the last 10 digits at each step.  
