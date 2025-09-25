@@ -55,3 +55,13 @@ table.prevnext .center img {
   display: block;               /* so margin auto works */
   margin: 0 auto;               /* centers the image itself */
 }
+
+/* Hover glow for Project Euler logo */
+img.projecteuler {
+  box-shadow: 0; /* no shadow by default */
+  transition: box-shadow 0.5s ease-out; /* smooth fade */
+}
+
+img.projecteuler:hover {
+  box-shadow: 0 0 1em #ffffff; /* white glow when hovered */
+}
