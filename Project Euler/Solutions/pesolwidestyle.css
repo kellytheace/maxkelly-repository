@@ -59,3 +59,13 @@ table.prevnext {
   border-bottom: none !important;
   box-shadow: none !important; /* safety: in case any theme adds a shadow */
 }
+
+/* Make the three cells equal width and keep the center truly centered */
+table.prevnext { table-layout: fixed; }   /* prevents the center cell from shrinking */
+table.prevnext td { width: 33.33%; }
+
+table.prevnext .center { text-align: center !important; }  /* beat theme defaults */
+table.prevnext .center img {
+  display: block;               /* so margin auto works */
+  margin: 0 auto;               /* centers the image itself */
+}
