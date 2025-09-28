@@ -505,3 +505,14 @@ a[href*="flattr.com/submit/auto"] { float: right; }
   display: inline-block;
   object-fit: contain;
 }
+
+/* Make H1 clearly bigger and bold */
+h1 {
+  font-size: 2em;   /* bigger than h2 (1.5em) */
+  font-weight: 700;   /* bold */
+}
+
+/* If you keep the .home class, stop it shrinking the H1 */
+.home h1 {
+  font-size: 2em;
+}
