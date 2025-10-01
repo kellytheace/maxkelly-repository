@@ -460,38 +460,6 @@ ul.all-news-posts {margin: 0 0 2.5em;}
 .team h2 { font-size: 1.2em; margin: 1.4em 0 .6em; padding: 0.15em 0 0 0; }
 .team h2 .role { color: #999; font-size: 0.7em; }
 
-/* Make an <h3> look exactly like the news-list date (span.post-date) */
-.h3-as-post-date{
-  /* from body text, to match span.post-date inheritance */
-  font-family:'roboto_light',sans-serif;
-  font-weight:400;
-  letter-spacing:0;       /* cancel headings' -0.03em */
-  font-size:0.8em;        /* EXACT: ul.news-posts span.post-date { font-size: .8em } */
-  color:#555;             /* EXACT: ul.news-posts span.post-date { color: #555 } */
-  margin:0;               /* spans had no margin; cancel h3 default margin */
-  line-height:1;          /* matches your heading line-height */
-}
-
-/* Make a <p> look exactly like the news-list title (ul.news-posts h3) */
-.p-as-news-title{
-  /* headings' typography (your h1..h6 block) */
-  font-family:'roboto_regular',sans-serif;
-  font-weight:300;        /* matches headings' weight */
-  letter-spacing:-.03em;  /* matches headings' letter-spacing */
-  line-height:1;
-
-  /* EXACT: ul.news-posts h3 { … } */
-  color:#005DB7;
-  font-size:1.2em;
-  margin:0;
-  padding:0 0 .6em;
-}
-
-/* In the teaser area your CSS forces <p> to black; keep it blue there too */
-.teaser section a p.p-as-news-title,
-.teaser section a:hover p.p-as-news-title{ color:#005DB7; }
-
-
 /* flattr */
 a[href*="flattr.com/submit/auto"] { float: right; }
 
