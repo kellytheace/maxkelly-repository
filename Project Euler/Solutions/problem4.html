@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Euler Problem 4</title>
+  
+  <link rel="stylesheet" href="https://latex.vercel.app/style.css">
+  <link rel="stylesheet" href="pesolwidestyle.css">
+  <!-- Prism for syntax highlighting (from their Getting Started) -->
+  <link rel="stylesheet" href="https://latex.vercel.app/prism/prism.css" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+  
+  <!-- Add Python language component so Python highlights correctly -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+  
+  <!-- MathJax for LaTeX-style math -->
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']]
+    }
+  };
+</script>
+<script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+</head>
+<body>
+
+<!-- Navigation bar -->
+<table class="prevnext">
+  <tr>
+    <td class="left">
+      <a href="problem3.html" rel="prev">&laquo;&laquo; problem 3</a>
+    </td>
+    <td class="center">
+      <a href="https://projecteuler.net" target="_blank" rel="noopener noreferrer" title="Open related page">
+        <img src="https://raw.githubusercontent.com/kellytheace/maxkelly-repository/main/Images/peprofile.png"
+             alt="Project Euler profile"
+             class="projecteuler">
+      </a>
+    </td>
+    <td class="right">
+      <a href="problem5.html" rel="next">problem 5 &raquo;&raquo;</a>
+    </td>
+  </tr>
+</table>
+  
+   <header>
+    <h1>Problem 3: Largest Prime Factor</h1>
+  </header>
+
+  <section class="problem">
+    <h2>Problem Statement</h2>
+    <p>ABC</p>
+  </section>
+
+  <section class="theory">
+    <h2>Theory &amp; Approach</h2>
+    <h3>DEF</h3>
+  <p>
+    GHI
+  </p>
+  <p style="text-align:center;">
+    $$1+2+\cdots+n=\frac{n(n+1)}{2}\,.$$
+  </p>
+
+  <p>
+    For multiples of a positive integer $d$ strictly below a limit $L$, the multiples are
+    $d, 2d, \dots, kd$ where
+    $$k=\left\lfloor\frac{L-1}{d}\right\rfloor.$$
+    Their sum is
+  </p>
+  <p style="text-align:center;">
+    $$S_d(L)=d\cdot\frac{k(k+1)}{2}\,.$$
+  </p>
+
+  <h3>Inclusion–Exclusion (3 or 5)</h3>
+  <p>
+    Numbers divisible by $3$ or $5$ are counted by
+  </p>
+  <p style="text-align:center;">
+    $$S(L)=S_3(L)+S_5(L)-S_{15}(L),$$
+  </p>
+  <p>
+    because multiples of $15$ are included in both $S_3$ and $S_5$.  
+    For this problem use $L=1000$ (we exclude the limit itself).
+  </p>
+
+  <h3>Why this is better than a loop</h3>
+  <p>
+    A brute-force loop checks every $i&lt;L$ (time $O(L)$). The closed-form above uses a constant number
+    of arithmetic operations (time $O(1)$), so it scales to very large $L$.
+    </p>
+  </section>
+
+  <section class="code">
+    <h2>Python Solution</h2>
+    <pre><code class="language-python">
+def sumn(limit, d):
+    k = (limit - 1) // d
+    return d * k * (k + 1) // 2
+
+limit = 1000
+result = sumn(limit, 3) + sumn(limit, 5) - sumn(limit, 15)
+print(result)
+    </code></pre>
+  </section>
+
+  <section class="answer">
+    <h2>Final Answer</h2>
+    <p><strong>XXXX</strong></p>
+  </section>
+
+<!-- Bottom navigation bar -->
+<table class="prevnext">
+  <tr>
+    <td class="left">
+      <a href="#">Back to top</a>
+    </td>
+    <td class="center">
+      <a href="../../index.html">Home</a>
+    </td>
+    <td class="right">
+      <a href="https://projecteuler.net">All problems</a>
+    </td>
+  </tr>
+</table>
+  
+</body>
+</html>
