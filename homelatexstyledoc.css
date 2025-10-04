@@ -516,3 +516,6 @@ h1 {
 .home h1 {
   font-size: 1.8em;
 }
+
+/* === OVERRIDES: nav text size === */
+nav ul li a { font-size: 1.1rem; }        /* bump menu text slightly */
