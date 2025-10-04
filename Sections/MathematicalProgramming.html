@@ -7,36 +7,43 @@
   <link rel="stylesheet" href="../homelatexstyledoc.css">
 
   <!-- Heatmap overrides: load after the main CSS -->
-  <style>
-    /* --- Heatmap table overrides --- */
-    table.pe-progress{
-      margin:1rem 0 1.25rem;
-      border-collapse:separate !important;
-      border-spacing:6px !important;
-      table-layout:fixed;
-      width:auto;
-    }
-    table.pe-progress th,
-    table.pe-progress td{
-      padding:0 !important;
-      border-bottom:none !important;
-      text-align:center;
-      vertical-align:middle;
-      width:2.25em; height:2.25em;
-      font-weight:600;
-      border:1px solid #000 !important;
-    }
-    table.pe-progress td a{
-      display:block;
-      width:100%; height:100%;
-      line-height:2.25em;
-      color:inherit !important;
-      text-decoration:none;
-    }
-    table.pe-progress td a:hover{ outline:1px solid #ccc; }
-    table.pe-progress td.done   { background:#009900 !important; color:#E6FFE6 !important; }
-    table.pe-progress td.solved { background:#DDDD33 !important; color:#333 !important; }
-    table.pe-progress td.todo   { background:#F6F9FB !important; color:#333 !important; }
+<style>
+  /* === Project Euler heatmap (clone of source style) === */
+  table.pe-progress{
+    margin:1em;
+    border-collapse:collapse;       /* no gaps between cells */
+    table-layout:fixed;
+    width:auto;
+  }
+
+  /* beat your global table padding/align/border-bottom */
+  table.pe-progress td{
+    padding:0 !important;
+    text-align:center !important;
+    border:1px solid #000 !important;
+    width:2.2em;                    /* same width as source */
+    font-weight:bold;               /* source uses bold in statuses */
+  }
+
+  /* make the whole square clickable + inner hover border like source */
+  table.pe-progress td a{
+    display:block;
+    border:1px solid transparent;   /* inner border for hover */
+    width:95%;                      /* slight inset like source */
+    margin:0 auto;
+    color:inherit;
+    text-decoration:none;
+    line-height:2.1em;              /* vertical centering of number */
+  }
+  table.pe-progress td a:hover{ border-color:#DDD; }
+
+  /* status colors mapped to source palette */
+  /* source "completed" → your "done"  */
+  table.pe-progress td.done   { background:#009900; color:#DDFFDD; }
+  /* source "solved" (yellow) */
+  table.pe-progress td.solved { background:#DDDD33; color:#333333; }
+  /* use source "queued" gray for your "todo" */
+  table.pe-progress td.todo   { background:#DDDDDD; color:#333333; }
   </style>
   
 </head>
