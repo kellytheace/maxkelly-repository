@@ -542,3 +542,45 @@ table.pe-progress{
 .pe-progress td.done   { background:#009900; color:#E6FFE6; }
 .pe-progress td.solved { background:#DDDD33; color:#333;    }
 .pe-progress td.todo   { background:#F6F9FB; color:#333;    }
+
+/* === Project Euler heatmap (match source) === */
+table.progress {
+  margin: 1em;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: auto;
+}
+table.progress td {
+  text-align: center;
+  border: 1px solid #000000;
+  padding: 0;
+  width: 2.2em; /* square size like the source */
+}
+/* inner block to create the subtle “gap” on hover */
+table.progress td * {
+  display: block;
+  border: 1px solid transparent;
+  width: 95%;
+}
+table.progress a {
+  color: inherit;
+  text-decoration: none;
+}
+table.progress a:hover {
+  border: 1px solid #DDDDDD;
+}
+
+/* status colors – copied from the source */
+td.open      { background: transparent; color: #333333; padding: 0 0.2em; }
+td.queued    { background: #DDDDDD; color: #333333; }
+td.solved    { background: #DDDD33; color: #333333; font-weight: bold; }
+td.euleronly { background: #9999FF; color: #333333; font-weight: bold; }
+td.completed { background: #009900; color: #DDFFDD; font-weight: bold; }
+td.notgood   { background: #FF7700; color: #333333; font-weight: bold; }
+td.notsolved { background: #FF0000; color: #DDFFDD; font-weight: bold; }
+td.blocked   { background: #000000; color: #DDDDDD; font-weight: bold; }
+td.latest    { color: #DD3333; animation: blinker 3s linear infinite; }
+
+@keyframes blinker {
+  0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; }
+}
