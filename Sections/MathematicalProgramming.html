@@ -5,6 +5,40 @@
   <title>Max Kelly - Coding Portfolio</title>
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="../homelatexstyledoc.css">
+
+  <!-- Heatmap overrides: load after the main CSS -->
+  <style>
+    /* --- Heatmap table overrides --- */
+    table.pe-progress{
+      margin:1rem 0 1.25rem;
+      border-collapse:separate !important;
+      border-spacing:6px !important;
+      table-layout:fixed;
+      width:auto;
+    }
+    table.pe-progress th,
+    table.pe-progress td{
+      padding:0 !important;
+      border-bottom:none !important;
+      text-align:center;
+      vertical-align:middle;
+      width:2.25em; height:2.25em;
+      font-weight:600;
+      border:1px solid #000 !important;
+    }
+    table.pe-progress td a{
+      display:block;
+      width:100%; height:100%;
+      line-height:2.25em;
+      color:inherit !important;
+      text-decoration:none;
+    }
+    table.pe-progress td a:hover{ outline:1px solid #ccc; }
+    table.pe-progress td.done   { background:#009900 !important; color:#E6FFE6 !important; }
+    table.pe-progress td.solved { background:#DDDD33 !important; color:#333 !important; }
+    table.pe-progress td.todo   { background:#F6F9FB !important; color:#333 !important; }
+  </style>
+  
 </head>
 <body class="container">
   <header>
