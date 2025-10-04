@@ -507,31 +507,38 @@ a[href*="flattr.com/submit/auto"] { float: right; }
 }
 
 
-/* Simple PE heatmap grid */
-table.pe-progress {
-  margin: 1em 0;
-  border-collapse: collapse;
-  table-layout: fixed;
-  width: auto;
-}
-table.pe-progress td {
-  width: 2.2em;
-  padding: .35em;
-  text-align: center;
-  border: 1px solid #000;     /* overrides your global table border-bottom */
-  font-weight: 600;
-}
-table.pe-progress td a {
-  display: block;
-  width: 100%;
-  color: inherit;
-  text-decoration: none;
-}
-table.pe-progress td a:hover {
-  text-decoration: underline;
+/* === Project Euler heatmap (override global table styles) === */
+table.pe-progress{
+  margin:.75rem 0 1.25rem;
+  border-collapse: separate;     /* allows gaps between cells */
+  border-spacing:6px;
+  table-layout:fixed;
+  width:auto;
 }
 
-/* statuses (keep it simple) */
-.pe-progress td.done   { background: #009900; color: #E6FFE6; } /* completed */
-.pe-progress td.solved { background: #DDDD33; color: #333;    } /* solved/OK */
-.pe-progress td.todo   { background: #F6F9FB; color: #333;    } /* not done */
+/* kill global padding + side border overrides */
+.pe-progress td{
+  padding:0 !important;
+  width:2.2em;                   /* square size */
+  height:2.2em;
+  text-align:center;
+  vertical-align:middle;
+  border:1px solid #000 !important;  /* beat border-bottom from globals */
+  font-weight:600;
+}
+
+/* make the whole square clickable + vertically centered number */
+.pe-progress td a{
+  display:block;
+  width:100%;
+  height:100%;
+  line-height:2.2em;             /* centers the digit */
+  color:inherit;
+  text-decoration:none;
+}
+.pe-progress td a:hover{ outline:1px solid #ddd; }
+
+/* statuses */
+.pe-progress td.done   { background:#009900; color:#E6FFE6; }
+.pe-progress td.solved { background:#DDDD33; color:#333;    }
+.pe-progress td.todo   { background:#F6F9FB; color:#333;    }
