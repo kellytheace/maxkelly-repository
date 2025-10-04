@@ -85,3 +85,8 @@ table.prevnext .center a:hover img.projecteuler {
           drop-shadow(0 0 16px rgba(225, 225, 225, 0.7));  /* outer glow */
   box-shadow: 0 0 12px rgba(225, 225, 225, 0.6) !important;
 }
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
