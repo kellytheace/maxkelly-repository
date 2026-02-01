@@ -52,64 +52,56 @@
 
   <section class="problem">
     <h2>Problem Statement</h2>
-    <p>ABC</p>
+    <p>$2520$ is the smallest number that can be divided by each of the numbers from $1$ to $10$
+    without any remainder.</p>
+  <p>
+    What is the smallest positive number that is evenly divisible by all of the numbers from $1$ to $20$?
+  </p>
   </section>
 
   <section class="theory">
     <h2>Theory &amp; Approach</h2>
-    <h3>DEF</h3>
   <p>
-    GHI
-  </p>
-  <p style="text-align:center;">
-    $$1+2+\cdots+n=\frac{n(n+1)}{2}\,.$$
+    We need the smallest positive number $N$ that is divisible by every integer from $1$ to $20$.
+    By definition, this number is the least common multiple:
+    $$N=\mathrm{lcm}(1,2,\dots,20).$$
   </p>
 
   <p>
-    For multiples of a positive integer $d$ strictly below a limit $L$, the multiples are
-    $d, 2d, \dots, kd$ where
-    $$k=\left\lfloor\frac{L-1}{d}\right\rfloor.$$
-    Their sum is
-  </p>
-  <p style="text-align:center;">
-    $$S_d(L)=d\cdot\frac{k(k+1)}{2}\,.$$
+    Instead of guessing $N$, we build it up step-by-step. If <code>result</code> is divisible by all
+    numbers we have seen so far, then updating
   </p>
 
-  <h3>Inclusion–Exclusion (3 or 5)</h3>
-  <p>
-    Numbers divisible by $3$ or $5$ are counted by
-  </p>
   <p style="text-align:center;">
-    $$S(L)=S_3(L)+S_5(L)-S_{15}(L),$$
-  </p>
-  <p>
-    because multiples of $15$ are included in both $S_3$ and $S_5$.  
-    For this problem use $L=1000$ (we exclude the limit itself).
+    $$\text{result} \leftarrow \mathrm{lcm}(\text{result}, i)$$
   </p>
 
-  <h3>Why this is better than a loop</h3>
   <p>
-    A brute-force loop checks every $i&lt;L$ (time $O(L)$). The closed-form above uses a constant number
-    of arithmetic operations (time $O(1)$), so it scales to very large $L$.
-    </p>
+    makes it divisible by $i$ as well, while keeping it as small as possible.
+    Repeating this for $i=11,12,\dots,20$ gives the final answer.
+  </p>
+
+  <p>
+    (Using $11$ to $20$ works because any number divisible by $11$–$20$ is automatically divisible by $1$–$10$.)
+  </p>
   </section>
 
   <section class="code">
     <h2>Python Solution</h2>
     <pre><code class="language-python">
-def sumn(limit, d):
-    k = (limit - 1) // d
-    return d * k * (k + 1) // 2
+import math
 
-limit = 1000
-result = sumn(limit, 3) + sumn(limit, 5) - sumn(limit, 15)
+result = 1
+for i in range(11, 21):
+    result = math.lcm(result, i)
+
 print(result)
     </code></pre>
   </section>
 
   <section class="answer">
     <h2>Final Answer</h2>
-    <p><strong>XXXX</strong></p>
+    <p><strong>232792560</strong></p>
   </section>
 
 <!-- Bottom navigation bar -->
