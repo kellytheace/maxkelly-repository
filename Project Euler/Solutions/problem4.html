@@ -52,7 +52,8 @@
 
   <section class="problem">
     <h2>Problem Statement</h2>
-    <p>ABC</p>
+    <p>A palindromic number reads the same both ways. The largest palindrome made from the product of two $2$-digit numbers is $9009=91 x 99$.
+    Find the largest palindrome made from the product of two $3$-digit numbers.</p>
   </section>
 
   <section class="theory">
@@ -97,19 +98,21 @@
   <section class="code">
     <h2>Python Solution</h2>
     <pre><code class="language-python">
-def sumn(limit, d):
-    k = (limit - 1) // d
-    return d * k * (k + 1) // 2
-
-limit = 1000
-result = sumn(limit, 3) + sumn(limit, 5) - sumn(limit, 15)
-print(result)
+def palindrome_check(n):
+    return str(n) == str(n)[::-1]
+arr=[]
+for i in range(1,999+1):
+    for j in range(1,999+1):
+        x=i*j
+        if palindrome_check(x)==True:
+            arr.append(x)
+print(max(arr))
     </code></pre>
   </section>
 
   <section class="answer">
     <h2>Final Answer</h2>
-    <p><strong>XXXX</strong></p>
+    <p><strong>906609</strong></p>
   </section>
 
 <!-- Bottom navigation bar -->
