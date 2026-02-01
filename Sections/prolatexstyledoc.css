@@ -544,13 +544,8 @@ table.pe-progress{
 .pe-progress td.todo   { background:#F6F9FB; color:#333;    }
 
 /* Toolkit links */
-.func-links a{
-  display:block !important;   /* puts each link on its own line */
-}
-
-.func-links .func-indent{
-  margin-left: 1.5em;         /* indent the second link */
-}
+.func-item { margin: 0; }          /* keeps it tidy */
+.func-indent { padding-left: 1.5em; }  /* indent amount */
 
 @keyframes blinker {
   0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; }
