@@ -55,7 +55,7 @@
     <p>The prime factors of 13195 are 5, 7, 13 and 29.
     What is the largest prime factor of the number 6000851475143?</p>
   </section>
-
+  
   <section class="theory">
     <h2>Theory &amp; Approach</h2>
     <h3>DEF</h3>
@@ -98,13 +98,15 @@
   <section class="code">
     <h2>Python Solution</h2>
     <pre><code class="language-python">
-def sumn(limit, d):
-    k = (limit - 1) // d
-    return d * k * (k + 1) // 2
-
-limit = 1000
-result = sumn(limit, 3) + sumn(limit, 5) - sumn(limit, 15)
-print(result)
+num=600851475143
+arr=[]
+while num>1:
+    for i in range (2,num+1):
+        if num%i==0:
+            num=num//i
+            arr.append(i)
+            break
+print(max(arr))
     </code></pre>
   </section>
 
