@@ -545,11 +545,11 @@ table.pe-progress{
 
 /* Toolkit links */
 .func-links a{
-  display:block;
+  display:block !important;   /* puts each link on its own line */
 }
 
-.func-links a.func-indent{
-  margin-left: 1.5em !important;
+.func-links .func-indent{
+  margin-left: 1.5em;         /* indent the second link */
 }
 
 @keyframes blinker {
