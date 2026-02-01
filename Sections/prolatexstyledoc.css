@@ -542,6 +542,16 @@ table.pe-progress{
 .pe-progress td.done   { background:#009900; color:#E6FFE6; }
 .pe-progress td.solved { background:#DDDD33; color:#333;    }
 .pe-progress td.todo   { background:#F6F9FB; color:#333;    }
+
+/* === Toolkit links (indented, no bullets) === */
+.func-links a{
+  display:block;           /* each link on its own line */
+}
+
+.func-links .sub{
+  margin-left: 1.5em;      /* controls indent */
+}
+
 @keyframes blinker {
   0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; }
 }
