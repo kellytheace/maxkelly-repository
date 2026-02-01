@@ -543,13 +543,13 @@ table.pe-progress{
 .pe-progress td.solved { background:#DDDD33; color:#333;    }
 .pe-progress td.todo   { background:#F6F9FB; color:#333;    }
 
-/* === Toolkit links (indented, no bullets) === */
+/* Toolkit links */
 .func-links a{
-  display:block;           /* each link on its own line */
+  display:block;          /* each link on its own line */
 }
 
-.func-links .sub{
-  margin-left: 1.5em;      /* controls indent */
+.func-sub{
+  padding-left: 1.5em;    /* indent amount (use margin-left if you prefer) */
 }
 
 @keyframes blinker {
