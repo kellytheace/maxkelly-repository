@@ -57,43 +57,39 @@
   </section>
   
   <section class="theory">
-    <h2>Theory &amp; Approach</h2>
-    <h3>Prime Factors</h3>
+  <h2>Theory &amp; Approach</h2>
+
+  <h3>Prime Factors</h3>
   <p>
-    If n is composite (non-prime), it must have a factor d with 
+    A number $n$ is <em>composite</em> if it is not prime (so it can be written as a product of smaller whole numbers).
+    If $n$ is composite, then it has a factor $d$ where
   </p>
   <p style="text-align:center;">
-    $$1+2+\cdots+n=\frac{n(n+1)}{2}\,.$$
+    $$d \le \sqrt{n}\,.$$
+  </p>
+  <p>
+    This is because if both factors were greater than $\sqrt{n}$, their product would be greater than $n$.
+    So to find a factor, you only need to test divisors up to $\sqrt{n}$.
   </p>
 
+  <h3>Divide out factors to find the largest</h3>
   <p>
-    For multiples of a positive integer $d$ strictly below a limit $L$, the multiples are
-    $d, 2d, \dots, kd$ where
-    $$k=\left\lfloor\frac{L-1}{d}\right\rfloor.$$
-    Their sum is
+    When you find a factor $d$, you divide it out of $n$ and keep going:
   </p>
   <p style="text-align:center;">
-    $$S_d(L)=d\cdot\frac{k(k+1)}{2}\,.$$
+    $$\text{while } d \mid n,\quad n \leftarrow \frac{n}{d}.$$
+  </p>
+  <p>
+    This makes $n$ smaller quickly, which also lowers the $\sqrt{n}$ limit. By the end, the largest factor you found
+    (or any leftover $n&gt;1$) is the largest prime factor.
   </p>
 
-  <h3>Inclusion–Exclusion (3 or 5)</h3>
+  <h3>Why this is better than testing everything</h3>
   <p>
-    Numbers divisible by $3$ or $5$ are counted by
+    Checking all numbers up to $n$ is slow. Limiting checks to $\sqrt{n}$ and shrinking $n$ as you go cuts down the
+    work massively, so it runs fast even for big numbers.
   </p>
-  <p style="text-align:center;">
-    $$S(L)=S_3(L)+S_5(L)-S_{15}(L),$$
-  </p>
-  <p>
-    because multiples of $15$ are included in both $S_3$ and $S_5$.  
-    For this problem use $L=1000$ (we exclude the limit itself).
-  </p>
-
-  <h3>Why this is better than a loop</h3>
-  <p>
-    A brute-force loop checks every $i&lt;L$ (time $O(L)$). The closed-form above uses a constant number
-    of arithmetic operations (time $O(1)$), so it scales to very large $L$.
-    </p>
-  </section>
+</section>
 
   <section class="code">
     <h2>Python Solution</h2>
